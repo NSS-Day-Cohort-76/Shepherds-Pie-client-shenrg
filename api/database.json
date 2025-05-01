@@ -1,334 +1,461 @@
 {
-    "employees": [
-        {
-            "id": 1,
-            "name": "Ava Morgan",
-            "email": "ava.morgan@gmail.com",
-            "isDriver": false,
-            "isAdmin": true,
-            "address": "124 Elm St, Nashville, TN 37201",
-            "phone": "303-555-0143"
-          },
-          {
-            "id": 2,
-            "name": "Liam Carter",
-            "email": "liam.carter@gmail.com",
-            "isDriver": false,
-            "isAdmin": true,
-            "address": "455 Maple Ave, Nashville, TN 37201",
-            "phone": "512-555-0172"
-          },
-          {
-            "id": 3,
-            "name": "Noah Patel",
-            "email": "noah.patel@gmail.com",
-            "isDriver": true,
-            "isAdmin": false,
-            "address": "92 Oak Blvd, Nashville, TN 37201",
-            "phone": "408-555-0109"
-          },
-          {
-            "id": 4,
-            "name": "Emma Kim",
-            "email": "emma.kim@gmail.com",
-            "isDriver": true,
-            "isAdmin": false,
-            "address": "381 Pine St, Nashville, TN 37201",
-            "phone": "206-555-0198"
-          },
-          {
-            "id": 5,
-            "name": "Oliver Nguyen",
-            "email": "oliver.nguyen@gmail.com",
-            "isDriver": true,
-            "isAdmin": false,
-            "address": "729 Birch Rd, Nashville, TN 37201",
-            "phone": "312-555-0137"
-          },
-          {
-            "id": 6,
-            "name": "Mia Thompson",
-            "email": "mia.thompson@gmail.com",
-            "isDriver": false,
-            "isAdmin": false,
-            "address": "154 Cedar Ln, Nashville, TN 37201",
-            "phone": "503-555-0155"
-          },
-          {
-            "id": 7,
-            "name": "Elijah Ramirez",
-            "email": "elijah.ramirez@gmail.com",
-            "isDriver": true,
-            "isAdmin": false,
-            "address": "600 Spruce Ct, Nashville, TN 37201",
-            "phone": "786-555-0184"
-          },
-          {
-            "id": 8,
-            "name": "Sophia Green",
-            "email": "sophia.green@gmail.com",
-            "isDriver": false,
-            "isAdmin": false,
-            "address": "213 Willow Dr, Nashville, TN 37201",
-            "phone": "615-555-0166"
-          },
-          {
-            "id": 9,
-            "name": "James Lee",
-            "email": "james.lee@gmail.com",
-            "isDriver": false,
-            "isAdmin": false,
-            "address": "821 Redwood St, Nashville, TN 37201",
-            "phone": "617-555-0122"
-          },
-          {
-            "id": 10,
-            "name": "Isabella White",
-            "email": "isabella.white@gmail.com",
-            "isDriver": true,
-            "isAdmin": false,
-            "address": "499 Chestnut Ave, Nashville, TN 37201",
-            "phone": "602-555-0193"
-          }
-    ],
-    "pizzas": [
-        {
-            "id": 1,
-            "name": "Kids",
-            "size": 8,
-            "baseCost": 6.00
-        },
-        {
-            "id": 2,
-            "name": "Small",
-            "size": 10,
-            "baseCost": 10.00
-        },
-        {
-            "id": 3,
-            "name": "Medium",
-            "size": 14,
-            "baseCost": 12.50
-        },
-        {
-            "id": 4,
-            "name": "Large",
-            "size": 16,
-            "baseCost": 15.00
-        },
-        {
-            "id": 5,
-            "name": "X-Large",
-            "size": 18,
-            "baseCost": 18.00
-        }
-    ],
-    "sauces": [
-        {
-            "id": 1,
-            "name": "Marinara"
-        },
-        {
-            "id": 2,
-            "name": "Arrabbiata"
-        },
-        {
-            "id": 3,
-            "name": "Garlic White"
-        },
-        {
-            "id": 4,
-            "name": "Diavolo"
-        },
-        {
-            "id": 5,
-            "name": "None"
-        }
-    ],
-    "cheeses": [
-        {
-            "id": 1,
-            "name": "Mozzarella"
-        },
-        {
-            "id": 2,
-            "name": "Buffalo Mozzarella"
-        },
-        {
-            "id": 3,
-            "name": "Four Cheese"
-        },
-        {
-            "id": 4,
-            "name": "Vegan"
-        },
-        {
-            "id": 5,
-            "name": "Ricotta"
-        },
-        {
-            "id": 6,
-            "name": "None"
-        }
-    ],
-    "toppings": [
-        {
-            "id": 1,
-            "name": "Sausage",
-            "cost": 0.50
-        },
-        {
-            "id": 2,
-            "name": "Pepperoni",
-            "cost": 0.85
-        },
-        {
-            "id": 3,
-            "name": "Mushroom",
-            "cost": 0.95
-        },
-        {
-            "id": 4,
-            "name": "Basil",
-            "cost": 0.55
-        },
-        {
-            "id": 5,
-            "name": "Black olive",
-            "cost": 0.80
-        },
-        {
-            "id": 6,
-            "name": "Green pepper",
-            "cost": 1.00
-        },
-        {
-            "id": 7,
-            "name": "Pineapple",
-            "cost": 0.60
-        },
-        {
-            "id": 8,
-            "name": "Extra cheese",
-            "cost": 0.75
-        }
-    ],
-    "customers": [
-        {
-            "id": 1,
-            "name": "Alice Johnson",
-            "phone": "555-123-4567"
-          },
-          {
-            "id": 2,
-            "name": "Bob Smith",
-            "phone": "555-234-5678"
-          },
-          {
-            "id": 3,
-            "name": "Charlie Lee",
-            "phone": "555-345-6789"
-          },
-          {
-            "id": 4,
-            "name": "Dana White",
-            "phone": "555-456-7890"
-          },
-          {
-            "id": 5,
-            "name": "Evan Green",
-            "phone": "555-567-8901"
-          },
-          {
-            "id": 6,
-            "name": "Fiona Brown",
-            "phone": "555-678-9012"
-          },
-          {
-            "id": 7,
-            "name": "George King",
-            "phone": "555-789-0123"
-          },
-          {
-            "id": 8,
-            "name": "Hannah Scott",
-            "phone": "555-890-1234"
-          },
-          {
-            "id": 9,
-            "name": "Ian Black",
-            "phone": "555-901-2345"
-          },
-          {
-            "id": 10,
-            "name": "Jill Adams",
-            "phone": "555-012-3456"
-          }
-    ],
-    "orders": [
-          {
-            "id": 1,
-            "employeeId": 1,
-            "delivererId": 2,
-            "tip": 3.50,
-            "totalCost": 23.99,
-            "customerId": 4,
-            "date": "2025-03-05T14:30:00"
-          },
-          {
-            "id": 2,
-            "employeeId": 2,
-            "delivererId": 1,
-            "tip": 5.00,
-            "totalCost": 45.25,
-            "customerId": 2,
-            "date": "2025-03-18T18:45:00"
-          },
-          {
-            "id": 3,
-            "employeeId": 1,
-            "delivererId": 3,
-            "tip": 2.00,
-            "totalCost": 19.80,
-            "customerId": 7,
-            "date": "2025-04-03T12:15:00"
-          },
-          {
-            "id": 4,
-            "employeeId": 3,
-            "delivererId": 1,
-            "tip": 4.25,
-            "totalCost": 32.10,
-            "customerId": 5,
-            "date": "2025-04-10T19:00:00"
-          },
-          {
-            "id": 5,
-            "employeeId": 2,
-            "delivererId": 2,
-            "tip": 3.00,
-            "totalCost": 27.50,
-            "customerId": 1,
-            "date": "2025-03-22T16:10:00"
-          },
-          {
-            "id": 6,
-            "employeeId": 1,
-            "delivererId": 3,
-            "tip": 6.00,
-            "totalCost": 59.99,
-            "customerId": 9,
-            "date": "2025-04-25T20:40:00"
-          },
-          {
-            "id": 7,
-            "employeeId": 3,
-            "delivererId": 1,
-            "tip": 2.75,
-            "totalCost": 21.35,
-            "customerId": 10,
-            "date": "2025-03-30T13:00:00"
-          }
-        ]
-      }
-      
+  "employees": [
+    {
+      "id": 1,
+      "name": "Ava Morgan",
+      "email": "ava.morgan@gmail.com",
+      "isDriver": false,
+      "isAdmin": true,
+      "address": "124 Elm St, Nashville, TN 37201",
+      "phone": "303-555-0143"
+    },
+    {
+      "id": 2,
+      "name": "Liam Carter",
+      "email": "liam.carter@gmail.com",
+      "isDriver": false,
+      "isAdmin": true,
+      "address": "455 Maple Ave, Nashville, TN 37201",
+      "phone": "512-555-0172"
+    },
+    {
+      "id": 3,
+      "name": "Noah Patel",
+      "email": "noah.patel@gmail.com",
+      "isDriver": true,
+      "isAdmin": false,
+      "address": "92 Oak Blvd, Nashville, TN 37201",
+      "phone": "408-555-0109"
+    },
+    {
+      "id": 4,
+      "name": "Emma Kim",
+      "email": "emma.kim@gmail.com",
+      "isDriver": true,
+      "isAdmin": false,
+      "address": "381 Pine St, Nashville, TN 37201",
+      "phone": "206-555-0198"
+    },
+    {
+      "id": 5,
+      "name": "Oliver Nguyen",
+      "email": "oliver.nguyen@gmail.com",
+      "isDriver": true,
+      "isAdmin": false,
+      "address": "729 Birch Rd, Nashville, TN 37201",
+      "phone": "312-555-0137"
+    },
+    {
+      "id": 6,
+      "name": "Mia Thompson",
+      "email": "mia.thompson@gmail.com",
+      "isDriver": false,
+      "isAdmin": false,
+      "address": "154 Cedar Ln, Nashville, TN 37201",
+      "phone": "503-555-0155"
+    },
+    {
+      "id": 7,
+      "name": "Elijah Ramirez",
+      "email": "elijah.ramirez@gmail.com",
+      "isDriver": true,
+      "isAdmin": false,
+      "address": "600 Spruce Ct, Nashville, TN 37201",
+      "phone": "786-555-0184"
+    },
+    {
+      "id": 8,
+      "name": "Sophia Green",
+      "email": "sophia.green@gmail.com",
+      "isDriver": false,
+      "isAdmin": false,
+      "address": "213 Willow Dr, Nashville, TN 37201",
+      "phone": "615-555-0166"
+    },
+    {
+      "id": 9,
+      "name": "James Lee",
+      "email": "james.lee@gmail.com",
+      "isDriver": false,
+      "isAdmin": false,
+      "address": "821 Redwood St, Nashville, TN 37201",
+      "phone": "617-555-0122"
+    },
+    {
+      "id": 10,
+      "name": "Isabella White",
+      "email": "isabella.white@gmail.com",
+      "isDriver": true,
+      "isAdmin": false,
+      "address": "499 Chestnut Ave, Nashville, TN 37201",
+      "phone": "602-555-0193"
+    }
+  ],
+  "sizes": [
+    {
+      "id": 1,
+      "name": "Kids",
+      "size": 8,
+      "baseCost": 6.0
+    },
+    {
+      "id": 2,
+      "name": "Small",
+      "size": 10,
+      "baseCost": 10.0
+    },
+    {
+      "id": 3,
+      "name": "Medium",
+      "size": 14,
+      "baseCost": 12.5
+    },
+    {
+      "id": 4,
+      "name": "Large",
+      "size": 16,
+      "baseCost": 15.0
+    },
+    {
+      "id": 5,
+      "name": "X-Large",
+      "size": 18,
+      "baseCost": 18.0
+    }
+  ],
+  "sauces": [
+    {
+      "id": 1,
+      "name": "Marinara"
+    },
+    {
+      "id": 2,
+      "name": "Arrabbiata"
+    },
+    {
+      "id": 3,
+      "name": "Garlic White"
+    },
+    {
+      "id": 4,
+      "name": "Diavolo"
+    },
+    {
+      "id": 5,
+      "name": "None"
+    }
+  ],
+  "cheeses": [
+    {
+      "id": 1,
+      "name": "Mozzarella"
+    },
+    {
+      "id": 2,
+      "name": "Buffalo Mozzarella"
+    },
+    {
+      "id": 3,
+      "name": "Four Cheese"
+    },
+    {
+      "id": 4,
+      "name": "Vegan"
+    },
+    {
+      "id": 5,
+      "name": "Ricotta"
+    },
+    {
+      "id": 6,
+      "name": "None"
+    }
+  ],
+  "toppings": [
+    {
+      "id": 1,
+      "name": "Sausage",
+      "cost": 0.5
+    },
+    {
+      "id": 2,
+      "name": "Pepperoni",
+      "cost": 0.85
+    },
+    {
+      "id": 3,
+      "name": "Mushroom",
+      "cost": 0.95
+    },
+    {
+      "id": 4,
+      "name": "Basil",
+      "cost": 0.55
+    },
+    {
+      "id": 5,
+      "name": "Black olive",
+      "cost": 0.8
+    },
+    {
+      "id": 6,
+      "name": "Green pepper",
+      "cost": 1.0
+    },
+    {
+      "id": 7,
+      "name": "Pineapple",
+      "cost": 0.6
+    },
+    {
+      "id": 8,
+      "name": "Extra cheese",
+      "cost": 0.75
+    }
+  ],
+  "pizzas": [
+    {
+      "id": 1,
+      "sizeId": 1,
+      "sauceId": 4,
+      "cheeseId": 3,
+      "orderId": 1
+    },
+    {
+      "id": 2,
+      "sizeId": 5,
+      "sauceId": 2,
+      "cheeseId": 3,
+      "orderId": 2
+    },
+    {
+      "id": 3,
+      "sizeId": 3,
+      "sauceId": 4,
+      "cheeseId": 6,
+      "orderId": 3
+    },
+    {
+      "id": 4,
+      "sizeId": 5,
+      "sauceId": 3,
+      "cheeseId": 5,
+      "orderId": 4
+    },
+    {
+      "id": 5,
+      "sizeId": 2,
+      "sauceId": 3,
+      "cheeseId": 2,
+      "orderId": 5
+    },
+    {
+      "id": 6,
+      "sizeId": 1,
+      "sauceId": 1,
+      "cheeseId": 3,
+      "orderId": 6
+    },
+    {
+      "id": 7,
+      "sizeId": 4,
+      "sauceId": 1,
+      "cheeseId": 3,
+      "orderId": 7
+    }
+  ],
+  "pizzaToppings": [
+    {
+      "id": 1,
+      "pizzaId": 1,
+      "toppingId": 1
+    },
+    {
+      "id": 2,
+      "pizzaId": 1,
+      "toppingId": 2
+    },
+    {
+      "id": 3,
+      "pizzaId": 1,
+      "toppingId": 3
+    },
+    {
+      "id": 4,
+      "pizzaId": 1,
+      "toppingId": 4
+    },
+    {
+      "id": 5,
+      "pizzaId": 2,
+      "toppingId": 8
+    },
+    {
+      "id": 6,
+      "pizzaId": 2,
+      "toppingId": 7
+    },
+    {
+      "id": 7,
+      "pizzaId": 2,
+      "toppingId": 5
+    },
+    {
+      "id": 8,
+      "pizzaId": 2,
+      "toppingId": 4
+    },
+    {
+      "id": 9,
+      "pizzaId": 3,
+      "toppingId": 3
+    },
+    {
+      "id": 10,
+      "pizzaId": 3,
+      "toppingId": 4
+    },
+    {
+      "id": 11,
+      "pizzaId": 3,
+      "toppingId": 5
+    },
+    {
+      "id": 12,
+      "pizzaId": 3,
+      "toppingId": 2
+    },
+    {
+      "id": 13,
+      "pizzaId": 4,
+      "toppingId": 6
+    },
+    {
+      "id": 14,
+      "pizzaId": 4,
+      "toppingId": 3
+    },
+    {
+      "id": 15,
+      "pizzaId": 4,
+      "toppingId": 8
+    },
+    {
+      "id": 16,
+      "pizzaId": 4,
+      "toppingId": 5
+    },
+    {
+      "id": 17,
+      "pizzaId": 5,
+      "toppingId": 2
+    },
+    {
+      "id": 18,
+      "pizzaId": 5,
+      "toppingId": 3
+    },
+    {
+      "id": 19,
+      "pizzaId": 6,
+      "toppingId": 6
+    },
+    {
+      "id": 20,
+      "pizzaId": 6,
+      "toppingId": 7
+    },
+    {
+      "id": 21,
+      "pizzaId": 6,
+      "toppingId": 1
+    },
+    {
+      "id": 22,
+      "pizzaId": 6,
+      "toppingId": 4
+    },
+    {
+      "id": 23,
+      "pizzaId": 7,
+      "toppingId": 7
+    },
+    {
+      "id": 24,
+      "pizzaId": 7,
+      "toppingId": 1
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "employeeId": 1,
+      "delivererId": 2,
+      "tip": 3.50,
+      "totalCost": 8.85,
+      "date": "2025-03-05T14:30:00",
+      "customerName": "Dana White",
+      "customerPhone": "555-456-7890"
+    },
+    {
+      "id": 2,
+      "employeeId": 2,
+      "delivererId": 1,
+      "tip": 5.00,
+      "totalCost": 20.7,
+      "date": "2025-03-18T18:45:00",
+      "customerName": "Bob Smith",
+      "customerPhone": "555-234-5678"
+    },
+    {
+      "id": 3,
+      "employeeId": 1,
+      "delivererId": 3,
+      "tip": 2.00,
+      "totalCost": 15.65,
+      "date": "2025-04-03T12:15:00",
+      "customerName": "George King",
+      "customerPhone": "555-789-0123"
+    },
+    {
+      "id": 4,
+      "employeeId": 3,
+      "delivererId": 1,
+      "tip": 4.25,
+      "totalCost": 21.5,
+      "date": "2025-04-10T19:00:00",
+      "customerName": "Evan Green",
+      "customerPhone": "555-567-8901"
+    },
+    {
+      "id": 5,
+      "employeeId": 2,
+      "delivererId": 2,
+      "tip": 3.00,
+      "totalCost": 11.8,
+      "date": "2025-03-22T16:10:00",
+      "customerName": "Alice Johnson",
+      "customerPhone": "555-123-4567"
+    },
+    {
+      "id": 6,
+      "employeeId": 1,
+      "delivererId": 3,
+      "tip": 6.00,
+      "totalCost": 8.65,
+      "date": "2025-04-25T20:40:00",
+      "customerName": "Ian Black",
+      "customerPhone": "555-901-2345"
+    },
+    {
+      "id": 7,
+      "employeeId": 3,
+      "delivererId": 1,
+      "tip": 2.75,
+      "totalCost": 16.1,
+      "date": "2025-03-30T13:00:00",
+      "customerName": "Jill Adams",
+      "customerPhone": "555-012-3456"
+    }
+  ]
+}

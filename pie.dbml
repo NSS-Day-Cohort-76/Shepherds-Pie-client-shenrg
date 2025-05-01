@@ -1,0 +1,57 @@
+Table employees {
+  id int pk
+  name varchar
+  email varchar
+  isDriver boolean
+  isAdmin boolean
+}
+Table orders {
+  id int pk
+  employeeId int
+  delivererId int
+  tip decimal
+  totalCost decimal
+  customerName varchar
+  customerPhone varchar
+  deliverySurcharge decimal
+  date datetime
+}
+Table pizzas {
+  id int pk
+  sizeId int
+  orderId int
+  cheeseId int
+  saucesId int
+}
+Table sizes {
+  id int pk
+  size int
+  name varchar
+  baseCost decimal
+}
+Table cheeses {
+  id int pk
+  name varchar
+}
+Table sauces {
+  id int pk
+  name varchar
+}
+Table toppings {
+  id int pk
+  name varchar
+  cost decimal
+}
+Table pizzaToppings {
+  id int pk
+  pizzaId int
+  toppingsId int
+}
+Ref: "sauces"."id" < "pizzas"."saucesId"
+Ref: "cheeses"."id" < "pizzas"."cheeseId"
+Ref: "employees"."id" < "orders"."employeeId"
+Ref: "toppings"."id" < "pizzaToppings"."toppingsId"
+Ref: "pizzas"."id" < "pizzaToppings"."pizzaId"
+Ref: "orders"."id" < "pizzas"."orderId"
+Ref: "employees"."id" < "orders"."delivererId"
+Ref: "sizes"."id" < "pizzas"."sizeId"
