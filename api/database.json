@@ -395,7 +395,8 @@
       "totalCost": 8.85,
       "date": "2025-03-05T14:30:00",
       "customerName": "Dana White",
-      "customerPhone": "555-456-7890"
+      "customerPhone": "555-456-7890",
+      "orderStatus": "Completed"
     },
     {
       "id": 2,
@@ -405,7 +406,8 @@
       "totalCost": 20.7,
       "date": "2025-03-18T18:45:00",
       "customerName": "Bob Smith",
-      "customerPhone": "555-234-5678"
+      "customerPhone": "555-234-5678",
+      "orderStatus": "Completed"
     },
     {
       "id": 3,
@@ -415,7 +417,8 @@
       "totalCost": 15.65,
       "date": "2025-04-03T12:15:00",
       "customerName": "George King",
-      "customerPhone": "555-789-0123"
+      "customerPhone": "555-789-0123",
+      "orderStatus": "Completed"
     },
     {
       "id": 4,
@@ -425,7 +428,8 @@
       "totalCost": 21.5,
       "date": "2025-04-10T19:00:00",
       "customerName": "Evan Green",
-      "customerPhone": "555-567-8901"
+      "customerPhone": "555-567-8901",
+      "orderStatus": "Completed"
     },
     {
       "id": 5,
@@ -435,7 +439,8 @@
       "totalCost": 11.8,
       "date": "2025-03-22T16:10:00",
       "customerName": "Alice Johnson",
-      "customerPhone": "555-123-4567"
+      "customerPhone": "555-123-4567",
+      "orderStatus": "Completed"
     },
     {
       "id": 6,
@@ -445,7 +450,8 @@
       "totalCost": 8.65,
       "date": "2025-04-25T20:40:00",
       "customerName": "Ian Black",
-      "customerPhone": "555-901-2345"
+      "customerPhone": "555-901-2345",
+      "orderStatus": "Completed"
     },
     {
       "id": 7,
@@ -455,7 +461,8 @@
       "totalCost": 16.1,
       "date": "2025-03-30T13:00:00",
       "customerName": "Jill Adams",
-      "customerPhone": "555-012-3456"
+      "customerPhone": "555-012-3456",
+      "orderStatus": "Completed"
     }
   ]
 }
