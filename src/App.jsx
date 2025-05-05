@@ -5,6 +5,7 @@ import "./App.css";
 import { Route, Routes, Outlet } from "react-router-dom";
 import { EmployeeViews } from "../components/views/EmployeeViews.jsx";
 import { Login } from "../components/auth/Login.jsx";
+import { EmployeeDetails } from "../components/employees/EditEmployees.jsx";
 
 // import { Authorized } from "./views/Authorized"
 // import { ApplicationViews } from "./views/ApplicationViews"
@@ -15,6 +16,7 @@ export const App = () => {
       <Route path="/login" element={<Login />} />
 
       <Route path="*" element={<EmployeeViews />} />
+<<<<<<< HEAD
     </Routes>
   );
 };
@@ -39,3 +41,19 @@ export const App = () => {
 //   }
 //   />
 // </Routes>
+=======
+
+      <Route
+        path="/employees/:employeeId"
+        element={
+          <>
+            <EmployeeNav />
+            <EmployeeDetails />
+          </>
+        }
+      />
+    </Routes>
+  )
+
+}
+>>>>>>> develop
