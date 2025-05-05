@@ -226,42 +226,42 @@
       "sizeId": 5,
       "sauceId": 2,
       "cheeseId": 3,
-      "orderId": 2
+      "orderId": 1
     },
     {
       "id": 3,
       "sizeId": 3,
       "sauceId": 4,
       "cheeseId": 6,
-      "orderId": 3
+      "orderId": 1
     },
     {
       "id": 4,
       "sizeId": 5,
       "sauceId": 3,
       "cheeseId": 5,
-      "orderId": 4
+      "orderId": 2
     },
     {
       "id": 5,
       "sizeId": 2,
       "sauceId": 3,
       "cheeseId": 2,
-      "orderId": 5
+      "orderId": 2
     },
     {
       "id": 6,
       "sizeId": 1,
       "sauceId": 1,
       "cheeseId": 3,
-      "orderId": 6
+      "orderId": 2
     },
     {
       "id": 7,
       "sizeId": 4,
       "sauceId": 1,
       "cheeseId": 3,
-      "orderId": 7
+      "orderId": 3
     }
   ],
   "pizzaToppings": [
@@ -418,50 +418,6 @@
       "date": "2025-04-03T12:15:00",
       "customerName": "George King",
       "customerPhone": "555-789-0123",
-      "orderStatus": "Completed"
-    },
-    {
-      "id": 4,
-      "employeeId": 3,
-      "delivererId": 1,
-      "tip": 4.25,
-      "totalCost": 21.5,
-      "date": "2025-04-10T19:00:00",
-      "customerName": "Evan Green",
-      "customerPhone": "555-567-8901",
-      "orderStatus": "Completed"
-    },
-    {
-      "id": 5,
-      "employeeId": 2,
-      "delivererId": 2,
-      "tip": 3.00,
-      "totalCost": 11.8,
-      "date": "2025-03-22T16:10:00",
-      "customerName": "Alice Johnson",
-      "customerPhone": "555-123-4567",
-      "orderStatus": "Completed"
-    },
-    {
-      "id": 6,
-      "employeeId": 1,
-      "delivererId": 3,
-      "tip": 6.00,
-      "totalCost": 8.65,
-      "date": "2025-04-25T20:40:00",
-      "customerName": "Ian Black",
-      "customerPhone": "555-901-2345",
-      "orderStatus": "Completed"
-    },
-    {
-      "id": 7,
-      "employeeId": 3,
-      "delivererId": 1,
-      "tip": 2.75,
-      "totalCost": 16.1,
-      "date": "2025-03-30T13:00:00",
-      "customerName": "Jill Adams",
-      "customerPhone": "555-012-3456",
       "orderStatus": "Completed"
     }
   ]

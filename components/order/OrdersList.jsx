@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { GetAllOrders } from "../../services/orderService.jsx"
-
+import { Link } from "react-router-dom"
+import "./OrdersList.css"
 
 // This component looks at ticket #2 / Frame 4
 
@@ -29,7 +30,8 @@ export const OrdersList = () => {
     <article className="orders">
       {allOrders.map((order) => {
         return (
-          <section className="order">
+          <Link to={`/order/${order.id}`} key={order.id}>
+          <section className="order" >
             <header className="order-info">Order #{order.id}</header>
             <div>{order.orderStatus}</div>
             <footer>
@@ -39,6 +41,7 @@ export const OrdersList = () => {
               </div>
             </footer>
           </section>
+          </Link>
         )
       })}
     </article>

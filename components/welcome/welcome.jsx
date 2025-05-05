@@ -22,7 +22,7 @@ export const Welcome = () => {
             navigate("/order/StartOrder");
           }}
         >
-          Create Order
+          Start Order
         </button>
       </div>
     </div>
