@@ -16,7 +16,6 @@ export const App = () => {
       <Route path="/login" element={<Login />} />
 
       <Route path="*" element={<EmployeeViews />} />
-<<<<<<< HEAD
     </Routes>
   );
 };
@@ -41,19 +40,17 @@ export const App = () => {
 //   }
 //   />
 // </Routes>
-=======
 
-      <Route
-        path="/employees/:employeeId"
-        element={
-          <>
-            <EmployeeNav />
-            <EmployeeDetails />
-          </>
-        }
-      />
-    </Routes>
-  )
+//       <Route
+//         path="/employees/:employeeId"
+//         element={
+//           <>
+//             <EmployeeNav />
+//             <EmployeeDetails />
+//           </>
+//         }
+//       />
+//     </Routes>
+//   )
 
-}
->>>>>>> develop
+// }
