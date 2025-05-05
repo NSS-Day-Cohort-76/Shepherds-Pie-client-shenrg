@@ -12,39 +12,74 @@ import "./OrdersList.css"
 
 // Orders need to be "paginated" so only x amount of orders on one page, ability to click and go back and forth on different pages of orders. 
 
-
+import { useEffect, useState } from "react"
+import { GetAllOrders } from "../../services/orderService.jsx"
 
 export const OrdersList = () => {
-        const [allOrders, setAllOrders] = useState([])
+  const [allOrders, setAllOrders] = useState([])
+  const [filteredOrders, setFilteredOrders] = useState([])
+  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split("T")[0]) // This sets our default time to today!
+
+  // This is a helper function to filter and sort the orders based on the selected date
+  const filterAndSortOrders = (orders, date) => {
+    return orders
+      .filter((order) => {
+        const orderDate = order.date.split("T")[0]
+        return orderDate === date
+      })
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+  }
 
   useEffect(() => {
     GetAllOrders().then((ordersArray) => {
-      setAllOrders(ordersArray)
-      console.log("orders set!")
+      if (Array.isArray(ordersArray)) {
+        setAllOrders(ordersArray)
+        const sortedFilteredOrders = filterAndSortOrders(ordersArray, selectedDate)
+        setFilteredOrders(sortedFilteredOrders)
+      } else {
+        console.error("Fetched data is not an array:", ordersArray)
+      }
     })
   }, [])
 
+  // Whenever selectedDate changes, filter the orders again (and set)
+  useEffect(() => {
+    const sortedFilteredOrders = filterAndSortOrders(allOrders, selectedDate)
+    setFilteredOrders(sortedFilteredOrders)
+  }, [selectedDate, allOrders])
+
   return (
-  <div className="orders-container">
-    <h2>Orders</h2>
-    <article className="orders">
-      {allOrders.map((order) => {
-        return (
-          <Link to={`/order/${order.id}`} key={order.id}>
-          <section className="order" >
-            <header className="order-info">Order #{order.id}</header>
-            <div>{order.orderStatus}</div>
-            <footer>
-              <div>
-                <div className="order-info">Customer Name</div>
-                <div>{order.customerName}</div>
-              </div>
-            </footer>
-          </section>
-          </Link>
-        )
-      })}
-    </article>
-  </div>
+    <div className="orders-container">
+      <h2>Orders</h2>
+
+      <label htmlFor="datePicker">Select Date:</label>
+      <input
+        type="date"
+        id="datePicker"
+        value={selectedDate}
+        onChange={(e) => setSelectedDate(e.target.value)}
+      />
+
+      <article className="orders">
+        {filteredOrders.length === 0 ? (
+          <p>No orders for {selectedDate}.</p>
+        ) : (
+          filteredOrders.map((order) => {
+            return (
+              <section key={order.id} className="order">
+                <header className="order-info">Order #{order.id}</header>
+                <div>{order.orderStatus}</div>
+                <footer>
+                  <div>
+                    <div className="order-info">Customer Name</div>
+                    <div>{order.customerName}</div>
+                  </div>
+                </footer>
+              </section>
+            )
+          })
+        )}
+      </article>
+    </div>
   )
 }

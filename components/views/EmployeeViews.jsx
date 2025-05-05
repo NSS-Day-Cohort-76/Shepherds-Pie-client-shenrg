@@ -6,6 +6,7 @@ import { Outlet, Route, Routes } from "react-router-dom"
 import { EmployeeNav } from "../nav/EmployeeNav.jsx"
 import { Welcome } from "../welcome/welcome.jsx"
 import { OrdersList } from "../order/OrdersList.jsx"
+import { EmployeeList } from "../employees/EmployeeList.jsx"
 
 
 export const EmployeeViews = ({}) => {
@@ -24,6 +25,7 @@ export const EmployeeViews = ({}) => {
                 <Route 
                 path="list"
                 element={<OrdersList />} />
+                <Route path="employees" element={<EmployeeList />} />
                 </Route>
         </Routes>
     )
