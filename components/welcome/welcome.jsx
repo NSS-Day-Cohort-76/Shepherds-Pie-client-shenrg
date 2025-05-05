@@ -19,10 +19,10 @@ export const Welcome = () => {
         <button
           className="btn-primary"
           onClick={() => {
-            navigate("/order/StartOrder");
+            navigate("/StartOrder");
           }}
         >
-          Create Order
+          Start Order
         </button>
       </div>
     </div>

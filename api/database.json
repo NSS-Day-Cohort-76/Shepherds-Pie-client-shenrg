@@ -96,13 +96,13 @@
       "id": 1,
       "name": "Kids",
       "size": 8,
-      "baseCost": 6.0
+      "baseCost": 6
     },
     {
       "id": 2,
       "name": "Small",
       "size": 10,
-      "baseCost": 10.0
+      "baseCost": 10
     },
     {
       "id": 3,
@@ -114,13 +114,13 @@
       "id": 4,
       "name": "Large",
       "size": 16,
-      "baseCost": 15.0
+      "baseCost": 15
     },
     {
       "id": 5,
       "name": "X-Large",
       "size": 18,
-      "baseCost": 18.0
+      "baseCost": 18
     }
   ],
   "sauces": [
@@ -200,7 +200,7 @@
     {
       "id": 6,
       "name": "Green pepper",
-      "cost": 1.0
+      "cost": 1
     },
     {
       "id": 7,
@@ -391,7 +391,7 @@
       "id": 1,
       "employeeId": 1,
       "delivererId": 2,
-      "tip": 3.50,
+      "tip": 3.5,
       "totalCost": 8.85,
       "date": "2025-03-05T14:30:00",
       "customerName": "Dana White",
@@ -402,7 +402,7 @@
       "id": 2,
       "employeeId": 2,
       "delivererId": 1,
-      "tip": 5.00,
+      "tip": 5,
       "totalCost": 20.7,
       "date": "2025-03-18T18:45:00",
       "customerName": "Bob Smith",
@@ -413,7 +413,7 @@
       "id": 3,
       "employeeId": 1,
       "delivererId": 3,
-      "tip": 2.00,
+      "tip": 2,
       "totalCost": 15.65,
       "date": "2025-04-03T12:15:00",
       "customerName": "George King",
@@ -435,7 +435,7 @@
       "id": 5,
       "employeeId": 2,
       "delivererId": 2,
-      "tip": 3.00,
+      "tip": 3,
       "totalCost": 11.8,
       "date": "2025-03-22T16:10:00",
       "customerName": "Alice Johnson",
@@ -446,7 +446,7 @@
       "id": 6,
       "employeeId": 1,
       "delivererId": 3,
-      "tip": 6.00,
+      "tip": 6,
       "totalCost": 8.65,
       "date": "2025-04-25T20:40:00",
       "customerName": "Ian Black",
@@ -463,6 +463,12 @@
       "customerName": "Jill Adams",
       "customerPhone": "555-012-3456",
       "orderStatus": "Completed"
+    },
+    {
+      "customerName": "Billy Bob",
+      "customerPhone": "892-923-1231",
+      "createdAt": "2025-05-05T19:12:09.709Z",
+      "id": 8
     }
   ]
 }
