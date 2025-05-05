@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import { GetAllOrders } from "../../services/orderService.jsx"
+import { getAllOrders } from "../../services/orderService.jsx"
+
 
 
 // This component looks at ticket #2 / Frame 4
@@ -17,7 +18,7 @@ export const OrdersList = () => {
         const [allOrders, setAllOrders] = useState([])
 
   useEffect(() => {
-    GetAllOrders().then((ordersArray) => {
+    getAllOrders().then((ordersArray) => {
       setAllOrders(ordersArray)
       console.log("orders set!")
     })
