@@ -1,0 +1,51 @@
+ .add-pizza-form {
+    background-color: var(--white);
+    border: 1px solid var(--outline);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin: 2rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .add-pizza-form fieldset {
+    border: none;
+    padding: 0;
+  }
+  
+  .add-pizza-form label,
+  .add-pizza-form select,
+  .add-pizza-form input[type="checkbox"],
+  .add-pizza-form input[type="radio"] {
+    font-size: 1rem;
+    margin: 0.25rem 0;
+  }
+  
+  .add-pizza-form .form-group {
+    margin-bottom: 0.5rem;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    color:brown;
+  }
+  
+  .button-group button {
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+    border: 1px solid var(--outline);
+    border-radius: 0.4rem;
+    background-color: var(--outline); /* was var(--white) */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .button-group button:hover {
+    background-color: #333;
+  }
+  

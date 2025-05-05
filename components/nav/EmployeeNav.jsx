@@ -13,7 +13,7 @@ export const EmployeeNav = () => {
                 <Link to="/">Home</Link>
             </li>
             <li className="navbar-item">
-                <Link to="/orders">Orders</Link>
+                <Link to="/StartOrder">Start Order</Link>
             </li>
             <li className="navbar-item">
                 <Link to="/list">Orders List</Link>
