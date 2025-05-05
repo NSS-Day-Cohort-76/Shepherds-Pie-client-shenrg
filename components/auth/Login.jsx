@@ -23,7 +23,7 @@ export const Login = () => {
           "shepherd_user",
           JSON.stringify({
             id: employee.id,
-            isStaff: employee.isAdmin,
+            isAdmin: employee.isAdmin,
           })
         )
 

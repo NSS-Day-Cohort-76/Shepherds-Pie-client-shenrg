@@ -28,10 +28,10 @@ export const EmployeeNav = () => {
         <li className="navbar-item navbar-logout">
           <Link
             className="navbar-link"
-            to=""
+            to="/login"
             onClick={() => {
               localStorage.removeItem("shepherd_user");
-              navigate("/", { replace: true });
+              navigate("/login", { replace: true });
             }}
           >
             Logout

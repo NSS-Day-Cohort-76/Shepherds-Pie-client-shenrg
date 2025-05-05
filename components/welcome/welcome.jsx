@@ -19,7 +19,7 @@ export const Welcome = () => {
         <button
           className="btn-primary"
           onClick={() => {
-            navigate("/order/StartOrder");
+            navigate("/StartOrder");
           }}
         >
           Start Order
