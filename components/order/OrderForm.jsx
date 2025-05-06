@@ -13,7 +13,8 @@ import { createOrder } from "../../services/orderService.jsx"
 export const OrderForm = ({ currentUser }) => {
     const [order, setOrder] = useState({
       customerName: "",
-      customerPhone: ""
+      customerPhone: "",
+      tip: 0
     })
 
     const navigate = useNavigate()
@@ -26,6 +27,7 @@ export const OrderForm = ({ currentUser }) => {
                 employeeId: currentUser?.id,
                 customerName: order.customerName,
                 customerPhone: order.customerPhone,
+                tip: order.tip,
                 createdAt: new Date().toISOString(),
             }
 
