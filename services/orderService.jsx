@@ -3,7 +3,6 @@
 //   }
 
 
-
 export const GetAllOrders = () => {
     return fetch(`http://localhost:8088/orders`)
       .then((res) => {
@@ -23,7 +22,6 @@ export const GetAllOrders = () => {
   }
   
 
-
 export const CreateOrder = () => {
     return <></>
 }
@@ -32,3 +30,30 @@ export const getPizzasByOrderId = (orderId) => {
     return fetch(`http://localhost:8088/orders/${orderId}?_embed=pizzas`)
         .then(res => res.json())
 }
+
+
+export const getOrderWithPizzaDetails = (orderId) => {
+  return fetch(`http://localhost:8088/orders/${orderId}?_embed=pizzas`)
+    .then(res => res.json())
+    .then(order => {
+      const pizzaIds = order.pizzas.map(p => p.id).join(',');
+
+      return fetch(`http://localhost:8088/pizzas?id_in=${pizzaIds}&_expand=size&_expand=sauce&_expand=cheese&_embed=pizzaToppings`)
+        .then(res => res.json())
+        .then(pizzas => {
+          return fetch(`http://localhost:8088/pizzaToppings?_expand=topping`)
+            .then(res => res.json())
+            .then(pizzaToppings => {
+              // Map toppings to their pizzas
+              pizzas.forEach(pizza => {
+                pizza.toppings = pizzaToppings
+                  .filter(pt => pt.pizzaId === pizza.id)
+                  .map(pt => pt.topping);
+              });
+
+              return { ...order, pizzas };
+            });
+        });
+    });
+}
+

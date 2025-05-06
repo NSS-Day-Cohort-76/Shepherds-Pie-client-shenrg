@@ -13,6 +13,7 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { getPizzasByOrderId } from "../../services/orderService.jsx"
+import { getOrderWithPizzaDetails } from "../../services/orderService.jsx"
 import "./OrdersList.css"
 
 export const OrderDetails = () => {
@@ -23,6 +24,7 @@ export const OrderDetails = () => {
         pizzas: []
     })
     const { orderId } = useParams()
+
 
     const formatCurrency = (amount) => {
         return new Intl.NumberFormat("en-US", {
@@ -63,24 +65,25 @@ export const OrderDetails = () => {
 
             {/* Pizza list section */}
             {/* Pizza list section */}
-<section className="order-container">
-    <h3>Pizzas in this Order:</h3>
-    {order?.pizzas?.map((pizza, index) => (
-        <div key={pizza.id} className="orders">
-            <div className="order-details">
-                <p>Pizza #{index + 1}</p>
-                <p>Size: {pizza.size}</p>
-                <p>Sauce: {pizza.sauce}</p>
-                <p>Cheese: {pizza.cheese}</p>
-                <p>Cost: {formatCurrency(pizza.cost)}</p>
-            </div>
-            <div className="btn-container">
-                <button onClick={() => handleEditPizza(pizza.id)}>Edit</button>
-                <button onClick={() => handleDeletePizza(pizza.id)}>Delete</button>
-            </div>
-        </div>
-    ))}
-</section>
+            <section className="order-container">
+                <h3>Pizzas in this Order:</h3>
+                {order?.pizzas?.map((pizza, index) => (
+                    <div key={pizza.id} className="orders">
+                        <div className="order-details">
+                            <p>Pizza #{index + 1}</p>
+                            <p>Size: {pizza.size?.name}</p>
+                            <p>Sauce: {pizza.sauce?.name}</p>
+                            <p>Cheese: {pizza.cheese?.name}</p>
+                            <p>Toppings: {pizza.toppings?.name}</p>
+                            <p>Cost: {formatCurrency(pizza.cost)}</p>
+                        </div>
+                        <div className="btn-container">
+                            <button onClick={() => handleEditPizza(pizza.id)}>Edit</button>
+                            <button onClick={() => handleDeletePizza(pizza.id)}>Delete</button>
+                        </div>
+                    </div>
+                ))}
+            </section>
         </section>
     )
 }

@@ -12,9 +12,6 @@ import "./OrdersList.css"
 
 // Orders need to be "paginated" so only x amount of orders on one page, ability to click and go back and forth on different pages of orders. 
 
-import { useEffect, useState } from "react"
-import { GetAllOrders } from "../../services/orderService.jsx"
-
 export const OrdersList = () => {
   const [allOrders, setAllOrders] = useState([])
   const [filteredOrders, setFilteredOrders] = useState([])
@@ -42,7 +39,7 @@ export const OrdersList = () => {
     })
   }, [])
 
-  // Whenever selectedDate changes, filter the orders again (and set)
+  // // Whenever selectedDate changes, filter the orders again (and set)
   useEffect(() => {
     const sortedFilteredOrders = filterAndSortOrders(allOrders, selectedDate)
     setFilteredOrders(sortedFilteredOrders)
@@ -67,6 +64,7 @@ export const OrdersList = () => {
           filteredOrders.map((order) => {
             return (
               <section key={order.id} className="order">
+                <Link to={`/list/${order.id}`} className="order-link">
                 <header className="order-info">Order #{order.id}</header>
                 <div>{order.orderStatus}</div>
                 <footer>
@@ -75,6 +73,7 @@ export const OrdersList = () => {
                     <div>{order.customerName}</div>
                   </div>
                 </footer>
+                </Link>
               </section>
             )
           })

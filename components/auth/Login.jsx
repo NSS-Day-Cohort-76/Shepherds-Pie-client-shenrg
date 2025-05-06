@@ -7,7 +7,7 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
-import { GetAllEmployees } from "../../services/employeeService.jsx"  
+import { GetAllEmployees, getEmployeeByEmail } from "../../services/employeeService.jsx"  
 
 export const Login = () => {
   const [email, set] = useState("isabella.white@gmail.com")
@@ -23,7 +23,7 @@ export const Login = () => {
           "shepherd_user",
           JSON.stringify({
             id: employee.id,
-            isStaff: employee.isAdmin,
+            isAdmin: employee.isAdmin,
           })
         )
 
