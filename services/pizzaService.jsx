@@ -30,3 +30,27 @@ export const addPizzaTopping = (pizzaTopping) => {
         body: JSON.stringify(pizzaTopping),
     })
 }
+
+export const GetPizzasWithToppings = async () => {
+    try {
+        // Fetch pizzas and pizzaToppings from the database
+        const pizzasResponse = await fetch("http://localhost:8088/pizzas");
+        const pizzaToppingsResponse = await fetch("http://localhost:8088/pizzaToppings");
+
+        const pizzas = await pizzasResponse.json();
+        const pizzaToppings = await pizzaToppingsResponse.json();
+
+        // Embed toppings into each pizza
+        const pizzasWithToppings = pizzas.map((pizza) => {
+            const toppings = pizzaToppings
+                .filter((topping) => topping.pizzaId === pizza.id)
+                .map((topping) => topping.toppingId); // Extract topping IDs
+            return { ...pizza, toppings }; // Add toppings array to the pizza
+        });
+
+        return pizzasWithToppings;
+    } catch (error) {
+        console.error("Error fetching pizzas with toppings:", error);
+        return [];
+    }
+};
