@@ -114,7 +114,7 @@ export const EmployeeDetails = () => {
           />
           {errors.address && <div className="error">{errors.address}</div>}
         </div>
-        <button type="submit">Save Changes</button>
+        <button className="save-button" type="submit">Save Changes</button>
       </form>
     </div>
   );
