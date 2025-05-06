@@ -12,9 +12,6 @@ import "./OrdersList.css"
 
 // Orders need to be "paginated" so only x amount of orders on one page, ability to click and go back and forth on different pages of orders. 
 
-import { useEffect, useState } from "react"
-import { GetAllOrders } from "../../services/orderService.jsx"
-
 export const OrdersList = () => {
   const [allOrders, setAllOrders] = useState([])
   const [filteredOrders, setFilteredOrders] = useState([])
