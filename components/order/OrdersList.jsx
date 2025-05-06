@@ -85,11 +85,14 @@ import { useEffect, useState } from "react";
 import { GetAllOrders } from "../../services/orderService.jsx";
 import { Link } from "react-router-dom";
 import "./OrdersList.css";
+import { assignDriverToOrder, GetAllEmployees, updateEmployeeStatus } from "../../services/employeeService.jsx";
+import { OrderDetails } from "./OrderDetails.jsx";
 
 export const OrdersList = () => {
   const [allOrders, setAllOrders] = useState([]);
   const [filteredOrders, setFilteredOrders] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split("T")[0]); // Default to today
+  const [employees, setEmployees] = useState([])
 
   // Helper function to filter and sort orders based on the selected date
   const filterAndSortOrders = (orders, date) => {
@@ -115,6 +118,24 @@ export const OrdersList = () => {
       }
     });
   }, []);
+  
+  useEffect(()=> {
+  GetAllEmployees().then((employeesArray) => {
+    const drivers = employeesArray.filter(emp => emp.isDriver && !emp.onDelivery)
+    setEmployees(drivers)
+  })
+},[])
+
+  const handleDriverAssign = async (orderId, driverId) => {
+    try {
+      await assignDriverToOrder(orderId, driverId)
+      await updateEmployeeStatus(driverId, {onDelivery: true})
+      const updatedOrders = await GetAllOrders()
+      setAllOrders(updatedOrders)
+    } catch (error) {
+      console.error("Error assigning driver:", error)
+    }
+  }
 
   // Whenever selectedDate changes, filter the orders again
   useEffect(() => {
@@ -151,6 +172,19 @@ export const OrdersList = () => {
                   </div>
                 </footer>
                 </Link>
+                <label htmlFor={`driver-${order.id}`}>Assign Driver:</label>
+                <select
+                id={`driver-${order.id}`}
+                onChange={(e)=> handleDriverAssign(order.id, parseInt(e.target.value))}
+                defaultValue=""
+                >
+                <option value="" disabled>Select a driver</option>
+                {employees.map((driver)=> (
+                  <option key={driver.id} value={driver.id}>
+                    {driver.name} {driver.onDelivery ? "(On Delivery)" : ""}
+                  </option>
+                ))}  
+                </select>
               </section>
             );
           })

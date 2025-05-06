@@ -5,7 +5,8 @@
       "email": "ava.morgan@pants.pants.com",
       "phone": "303-555-0170",
       "address": "130 Elm St, Nashville, TN 37201",
-      "id": 1
+      "id": 1,
+      "onDelivery": false
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "isDriver": false,
       "isAdmin": true,
       "address": "455 Maple Ave, Nashville, TN 37201",
-      "phone": "512-555-0172"
+      "phone": "512-555-0172",
+      "onDelivery": false
     },
     {
       "id": 3,
@@ -23,7 +25,8 @@
       "isDriver": true,
       "isAdmin": false,
       "address": "92 Oak Blvd, Nashville, TN 37201",
-      "phone": "408-555-0109"
+      "phone": "408-555-0109",
+      "onDelivery": true
     },
     {
       "id": 4,
@@ -32,7 +35,8 @@
       "isDriver": true,
       "isAdmin": false,
       "address": "381 Pine St, Nashville, TN 37201",
-      "phone": "206-555-0198"
+      "phone": "206-555-0198",
+      "onDelivery": false
     },
     {
       "id": 5,
@@ -41,7 +45,8 @@
       "isDriver": true,
       "isAdmin": false,
       "address": "729 Birch Rd, Nashville, TN 37201",
-      "phone": "312-555-0137"
+      "phone": "312-555-0137",
+      "onDelivery": false
     },
     {
       "id": 6,
@@ -50,7 +55,8 @@
       "isDriver": false,
       "isAdmin": false,
       "address": "154 Cedar Ln, Nashville, TN 37201",
-      "phone": "503-555-0155"
+      "phone": "503-555-0155",
+      "onDelivery": false
     },
     {
       "id": 7,
@@ -59,14 +65,16 @@
       "isDriver": true,
       "isAdmin": false,
       "address": "600 Spruce Ct, Nashville, TN 37201",
-      "phone": "786-555-0184"
+      "phone": "786-555-0184",
+      "onDelivery": false
     },
     {
       "name": "Sophia Green",
       "email": "sophia.green@gmail.com",
       "phone": "615-555-0166",
       "address": "213 Willow Dr, Nashville, TN 37201",
-      "id": 8
+      "id": 8,
+      "onDelivery": false
     },
     {
       "id": 9,
@@ -75,7 +83,8 @@
       "isDriver": false,
       "isAdmin": false,
       "address": "821 Redwood St, Nashville, TN 37201",
-      "phone": "617-555-0122"
+      "phone": "617-555-0122",
+      "onDelivery": false
     },
     {
       "id": 10,
@@ -84,7 +93,8 @@
       "isDriver": true,
       "isAdmin": false,
       "address": "499 Chestnut Ave, Nashville, TN 37201",
-      "phone": "602-555-0193"
+      "phone": "602-555-0193",
+      "onDelivery": false
     }
   ],
   "sizes": [
@@ -639,19 +649,22 @@
       "customerName": "bob b",
       "customerPhone": "534-153-3413",
       "createdAt": "2025-05-06T00:18:16.013Z",
-      "id": 11
+      "id": 11,
+      "driverId": 4
     },
     {
       "customerName": "Bob Dylan",
       "customerPhone": "111-222-3333",
       "createdAt": "2025-05-06T18:08:55.538Z",
-      "id": 12
+      "id": 12,
+      "driverId": 4
     },
     {
       "customerName": "Jon Young Jr.",
       "customerPhone": "123-123-9988",
       "createdAt": "2025-05-06T18:37:41.328Z",
-      "id": 13
+      "id": 13,
+      "driverId": 3
     }
   ]
 }
