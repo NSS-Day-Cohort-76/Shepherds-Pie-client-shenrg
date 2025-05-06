@@ -10,12 +10,15 @@
 
 // Should be smaller buttons on the actual pizzas (see wireframe) to edit or remove those specific pizzas
 
-import { useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { getPizzasByOrderId } from "../../services/orderService.jsx"
 import "./OrdersList.css"
 
 export const OrderDetails = () => {
+
+    const navigate = useNavigate()
+
     const [order, setOrder] = useState({
         id: 0,
         customerName: "",
@@ -48,6 +51,11 @@ export const OrderDetails = () => {
             {/* Basic order info */}
             <div className="order-info-container">
                 <div>
+                    <button onClick={() => navigate(`/orders/${orderId}/add-pizza`)}>
+                     Add Pizza
+                    </button>
+                </div>
+                <div>
                     <span className="order-info">Customer Name: </span>
                     {order?.customerName}
                 </div>
@@ -75,7 +83,7 @@ export const OrderDetails = () => {
                 <p>Cost: {formatCurrency(pizza.cost)}</p>
             </div>
             <div className="btn-container">
-                <button onClick={() => handleEditPizza(pizza.id)}>Edit</button>
+                <button onClick={() => navigate(`/orders/${orderId}/edit-pizza/${pizza.id}`)}>Edit</button>
                 <button onClick={() => handleDeletePizza(pizza.id)}>Delete</button>
             </div>
         </div>

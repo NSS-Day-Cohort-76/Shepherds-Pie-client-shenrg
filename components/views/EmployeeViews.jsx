@@ -10,6 +10,8 @@ import { OrderForm } from "../order/OrderForm.jsx";
 import { SalesReport } from "../sales/SalesReport.jsx";
 import { OrderDetails } from "../order/OrderDetails.jsx";
 import { EmployeeDetails } from "../employees/EmployeeDetails.jsx";
+import { AddPizza } from "../pizza/AddPizza.jsx";
+import { EditPizza } from "../pizza/EditPizza.jsx";
 
 export const EmployeeViews = ({}) => {
   return (
@@ -25,11 +27,13 @@ export const EmployeeViews = ({}) => {
       >
         <Route index element={<Welcome />} />
         <Route path="list" element={<OrdersList />} />
-        <Route path=":orderId" element={<OrderDetails />} />
+        <Route path="list/:orderId" element={<OrderDetails />} />
         <Route path="employees" element={<EmployeeList />} />
-        <Route path=":employeeId" element={<EmployeeDetails />} />
+        <Route path="/employees/:employeeId" element={<EmployeeDetails />} />
         <Route path="sales" element={<SalesReport />} />
         <Route path="StartOrder" element={<OrderForm />} />
+        <Route path="orders/:orderId/add-pizza" element={<AddPizza />} />
+        <Route path="orders/:orderId/edit-pizza/:pizzaId" element={<EditPizza />} />
       </Route>
     </Routes>
   );
