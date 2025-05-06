@@ -2,7 +2,7 @@
 // Ticket #10, Frame 11
 
 import { useEffect, useState } from "react"
-import { getAllOrders } from "../../services/orderService.jsx"
+import { GetAllOrders } from "../../services/orderService.jsx"
 import "./Sales.css"
 
 // Needs to be a date select button 
@@ -17,7 +17,7 @@ export const SalesReport = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        getAllOrders().then((data) => {
+        GetAllOrders().then((data) => {
             setOrders(data)
         })
         .catch((error) => {
