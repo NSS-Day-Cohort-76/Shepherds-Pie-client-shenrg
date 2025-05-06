@@ -23,9 +23,16 @@ export const GetAllOrders = () => {
   }
   
 
-export const CreateOrder = () => {
-    return <></>
-}
+
+  export const createOrder = (order) => {
+    return fetch(`http://localhost:8088/orders`, {
+      method: "POST",
+      headers: { 
+        "Content-Type": "application/json"
+       },
+      body: JSON.stringify(order),
+    });
+  };
 
 export const getPizzasByOrderId = (orderId) => {
     return fetch(`http://localhost:8088/orders/${orderId}?_embed=pizzas`)
