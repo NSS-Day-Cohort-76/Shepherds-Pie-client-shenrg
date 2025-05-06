@@ -1,24 +1,25 @@
-
-// Ticket #7, Frame 8
-
-// Employee list should only be viewable by a Admin level user. All other users (employees) 
-// should be shown an error page then redirected back to the home screen. 
-// Employees name and contact info should be displayed in the main list. 
 import { useEffect, useState } from "react"
 import { GetAllEmployees } from "../../services/employeeService.jsx"
 import { Link } from "react-router-dom"
 import "./Employees.css"
 
-export const EmployeeList = () => {
+
+export const EmployeeList = ({ currentUser }) => {
   const [allEmployees, setAllEmployees] = useState([])
 
   useEffect(() => {
     GetAllEmployees().then((employeesArray) => {
       setAllEmployees(employeesArray)
-      console.log("employees set!")
     })
   }, [])
 
+  if (!currentUser || currentUser.isAdmin !== true) {
+    return (
+      <div className="unauthorized-message">
+        <h2>You don't have authorization to view this page!</h2>
+      </div>
+    )
+  }
   return (
     <div className="employees-container">
       <h2>Employees</h2>

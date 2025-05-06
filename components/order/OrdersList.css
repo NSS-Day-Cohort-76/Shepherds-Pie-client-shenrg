@@ -1,64 +1,64 @@
 .orders {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
+}
 
-  .orders-container {
-    margin: 1rem 5rem 0rem 5rem;
-  }
+.orders-container {
+  margin: 1rem 5rem 0rem 5rem;
+}
 
-  .orders-container > h2 {
-    margin-top: 0;
-  }
+.order-container {
+  margin: 1rem 5rem 0rem 5rem;
+  width: 600px;
+}
 
-  .order {
-    background-color: var(--white);
-    border: 1px solid var(--outline);
-    margin: 0.5rem 0;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-  }
+.orders-container > h2 {
+  margin-top: 0;
+}
 
-  /* This targets all the child elements of the element with the .order class */
-  .order > * {
-    padding: 0.5rem;
-  }
+.order {
+  background-color: var(--white);
+  border: 1px solid var(--outline);
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 600px;
+  margin-left: 20px;
+}
 
-  .order-info {
-    color: var(--outline);
-    font-family: "Roboto", sans-serif;
-  }
+.order > * {
+  padding: 0.5rem;
+}
 
-  /* This targets any footer element that is a child of an element with the .order class */
-  .order > footer {
-    display: flex;
-    border-top: 1px solid var(--outline);
-    align-items: center;
-    justify-content: space-between;
-  }
+.order-info {
+  color: var(--outline);
+  font-family: "Roboto", sans-serif;
+}
 
-  /* This targets any element that is a child of a footer that is a child of an element with the .order class */
-  .order > footer > * {
-    flex-basis: 22%;
-  }
+.order > footer {
+  display: flex;
+  border-top: 1px solid var(--outline);
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .filter-btn {
-    margin-right: 2rem;
-  }
+.order > footer > * {
+  flex-basis: 22%;
+}
 
-  .order-search {
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    border: 1px solid var(--outline);
-    border-radius: 0.25rem;
-    margin-left: auto;
-  }
 
-  .filter-bar {
-    display: flex;
-  }
-  
-  .btn-container {
-    display: flex;
-    justify-content: flex-end;
-  }
+.pagination-button {
+  background-color: var(--dark); 
+  color: var(--white); 
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.pagination-button:hover {
+  background-color: var(--outline); 
+}

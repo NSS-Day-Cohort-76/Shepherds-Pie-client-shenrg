@@ -4,19 +4,24 @@
       "id": 1,
       "name": "Ava Morgan",
       "email": "ava.morgan@pants.pants.com",
+<<<<<<< HEAD
       "isDriver": true,
       "isAdmin": true,
       "phone": "303-555-0170",
       "address": "130 Elm St, Nashville, TN 37201"
+=======
+      "phone": "303-555-0172",
+      "address": "130 Elm St, Nashville, TN 37201",
+      "id": 1,
+      "onDelivery": false
+>>>>>>> develop
     },
     {
-      "id": 2,
       "name": "Liam Carter",
-      "email": "liam.carter@gmail.com",
-      "isDriver": false,
-      "isAdmin": true,
+      "email": "liam.carter@hotmail.com",
+      "phone": "512-555-0172",
       "address": "455 Maple Ave, Nashville, TN 37201",
-      "phone": "512-555-0172"
+      "id": 2
     },
     {
       "id": 3,
@@ -25,7 +30,8 @@
       "isDriver": true,
       "isAdmin": false,
       "address": "92 Oak Blvd, Nashville, TN 37201",
-      "phone": "408-555-0109"
+      "phone": "408-555-0109",
+      "onDelivery": true
     },
     {
       "id": 4,
@@ -34,7 +40,8 @@
       "isDriver": true,
       "isAdmin": false,
       "address": "381 Pine St, Nashville, TN 37201",
-      "phone": "206-555-0198"
+      "phone": "206-555-0198",
+      "onDelivery": false
     },
     {
       "id": 5,
@@ -43,7 +50,8 @@
       "isDriver": true,
       "isAdmin": false,
       "address": "729 Birch Rd, Nashville, TN 37201",
-      "phone": "312-555-0137"
+      "phone": "312-555-0137",
+      "onDelivery": false
     },
     {
       "id": 6,
@@ -52,7 +60,8 @@
       "isDriver": false,
       "isAdmin": false,
       "address": "154 Cedar Ln, Nashville, TN 37201",
-      "phone": "503-555-0155"
+      "phone": "503-555-0155",
+      "onDelivery": false
     },
     {
       "id": 7,
@@ -61,16 +70,16 @@
       "isDriver": true,
       "isAdmin": false,
       "address": "600 Spruce Ct, Nashville, TN 37201",
-      "phone": "786-555-0184"
+      "phone": "786-555-0184",
+      "onDelivery": true
     },
     {
-      "id": 8,
       "name": "Sophia Green",
       "email": "sophia.green@gmail.com",
-      "isDriver": false,
-      "isAdmin": false,
+      "phone": "615-555-0166",
       "address": "213 Willow Dr, Nashville, TN 37201",
-      "phone": "615-555-0166"
+      "id": 8,
+      "onDelivery": false
     },
     {
       "id": 9,
@@ -79,7 +88,8 @@
       "isDriver": false,
       "isAdmin": false,
       "address": "821 Redwood St, Nashville, TN 37201",
-      "phone": "617-555-0122"
+      "phone": "617-555-0122",
+      "onDelivery": false
     },
     {
       "id": 10,
@@ -88,7 +98,8 @@
       "isDriver": true,
       "isAdmin": false,
       "address": "499 Chestnut Ave, Nashville, TN 37201",
-      "phone": "602-555-0193"
+      "phone": "602-555-0193",
+      "onDelivery": false
     }
   ],
   "sizes": [
@@ -261,7 +272,63 @@
       "sizeId": 4,
       "sauceId": 1,
       "cheeseId": 3,
-      "orderId": 3
+      "orderId": 6
+    },
+    {
+      "orderId": 11,
+      "sizeId": 3,
+      "sauceId": 3,
+      "cheeseId": 3,
+      "id": 8
+    },
+    {
+      "orderId": 10,
+      "sizeId": 5,
+      "sauceId": 2,
+      "cheeseId": 1,
+      "id": 9
+    },
+    {
+      "orderId": 11,
+      "sizeId": 4,
+      "sauceId": 1,
+      "cheeseId": 3,
+      "id": 10
+    },
+    {
+      "id": 13,
+      "orderId": 12,
+      "sizeId": 5,
+      "sauceId": 4,
+      "cheeseId": 5
+    },
+    {
+      "orderId": 13,
+      "sizeId": 5,
+      "sauceId": 1,
+      "cheeseId": 2,
+      "id": 14
+    },
+    {
+      "id": 15,
+      "orderId": 13,
+      "sizeId": 2,
+      "sauceId": 1,
+      "cheeseId": 2
+    },
+    {
+      "orderId": 14,
+      "sizeId": 3,
+      "sauceId": 4,
+      "cheeseId": 2,
+      "id": 16
+    },
+    {
+      "orderId": 14,
+      "sizeId": 4,
+      "sauceId": 2,
+      "cheeseId": 2,
+      "id": 17
     }
   ],
   "pizzaToppings": [
@@ -429,6 +496,96 @@
       "pizzaId": 9,
       "toppingId": 4,
       "id": 33
+    },
+    {
+      "pizzaId": 8,
+      "toppingId": 2,
+      "id": 34
+    },
+    {
+      "pizzaId": 9,
+      "toppingId": 1,
+      "id": 35
+    },
+    {
+      "pizzaId": 9,
+      "toppingId": 2,
+      "id": 36
+    },
+    {
+      "pizzaId": 10,
+      "toppingId": 2,
+      "id": 37
+    },
+    {
+      "pizzaId": 10,
+      "toppingId": 3,
+      "id": 38
+    },
+    {
+      "pizzaId": 10,
+      "toppingId": 4,
+      "id": 39
+    },
+    {
+      "pizzaId": "13",
+      "toppingId": 5,
+      "id": 40
+    },
+    {
+      "pizzaId": 14,
+      "toppingId": 2,
+      "id": 41
+    },
+    {
+      "pizzaId": 14,
+      "toppingId": 1,
+      "id": 42
+    },
+    {
+      "pizzaId": 14,
+      "toppingId": 6,
+      "id": 43
+    },
+    {
+      "pizzaId": "15",
+      "toppingId": 2,
+      "id": 44
+    },
+    {
+      "pizzaId": 16,
+      "toppingId": 2,
+      "id": 45
+    },
+    {
+      "pizzaId": 16,
+      "toppingId": 3,
+      "id": 46
+    },
+    {
+      "pizzaId": 16,
+      "toppingId": 5,
+      "id": 47
+    },
+    {
+      "pizzaId": 17,
+      "toppingId": 6,
+      "id": 48
+    },
+    {
+      "pizzaId": 17,
+      "toppingId": 7,
+      "id": 49
+    },
+    {
+      "pizzaId": 17,
+      "toppingId": 8,
+      "id": 50
+    },
+    {
+      "pizzaId": 17,
+      "toppingId": 4,
+      "id": 51
     }
   ],
   "orders": [
@@ -526,7 +683,7 @@
       "createdAt": "2025-05-05T10:30:00",
       "customerName": "Alex Smith",
       "customerPhone": "555-111-2222",
-      "orderStatus": "Pending"
+      "orderStatus": "Completed"
     },
     {
       "id": 9,
