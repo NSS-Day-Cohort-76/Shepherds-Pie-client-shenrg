@@ -141,6 +141,7 @@ export const OrdersList = () => {
           filteredOrders.map((order) => {
             return (
               <section key={order.id} className="order">
+                <Link to={`/list/${order.id}`} className="order-link">
                 <header className="order-info">Order #{order.id}</header>
                 <div>{order.orderStatus}</div>
                 <footer>
@@ -149,6 +150,7 @@ export const OrdersList = () => {
                     <div>{order.customerName}</div>
                   </div>
                 </footer>
+                </Link>
               </section>
             );
           })
