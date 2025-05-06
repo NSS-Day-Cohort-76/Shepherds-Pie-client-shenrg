@@ -22,38 +22,47 @@ export const GetAllOrders = () => {
   }
   
 
-export const CreateOrder = () => {
-    return <></>
-}
+  export const createOrder = (order) => {
+    return fetch(`http://localhost:8088/orders`, {
+      method: "POST",
+      headers: { 
+        "Content-Type": "application/json"
+       },
+      body: JSON.stringify(order),
+    });
+  };
 
 export const getPizzasByOrderId = (orderId) => {
     return fetch(`http://localhost:8088/orders/${orderId}?_embed=pizzas`)
         .then(res => res.json())
 }
 
-
-export const getOrderWithPizzaDetails = (orderId) => {
-  return fetch(`http://localhost:8088/orders/${orderId}?_embed=pizzas`)
-    .then(res => res.json())
-    .then(order => {
-      const pizzaIds = order.pizzas.map(p => p.id).join(',');
-
-      return fetch(`http://localhost:8088/pizzas?id_in=${pizzaIds}&_expand=size&_expand=sauce&_expand=cheese&_embed=pizzaToppings`)
-        .then(res => res.json())
-        .then(pizzas => {
-          return fetch(`http://localhost:8088/pizzaToppings?_expand=topping`)
-            .then(res => res.json())
-            .then(pizzaToppings => {
-              // Map toppings to their pizzas
-              pizzas.forEach(pizza => {
-                pizza.toppings = pizzaToppings
-                  .filter(pt => pt.pizzaId === pizza.id)
-                  .map(pt => pt.topping);
-              });
-
-              return { ...order, pizzas };
-            });
-        });
-    });
+export const deletePizza = (pizzaId) => {
+  return fetch(`http://localhost:8088/pizzas/${pizzaId}`, {
+      method: "DELETE",
+  })
 }
 
+export const saveTip = (orderId, tip) => {
+  return fetch(`http://localhost:8088/orders/${orderId}`, {
+      method: "PATCH",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+          tip: tip, // Update the tip property in the database
+      }),
+  });
+};
+
+export const cancelOrder = (orderId) => {
+  return fetch(`http://localhost:8088/orders/${orderId}`, {
+      method: "DELETE",
+  })
+      .then((response) => {
+          if (!response.ok) {
+              throw new Error("Failed to delete the order.");
+          }
+          return response.json();
+      });
+};

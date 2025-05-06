@@ -58,7 +58,58 @@
     display: flex;
   }
   
-  .btn-container {
-    display: flex;
-    justify-content: flex-end;
-  }
+  /* Button container for alignment and spacing */
+.btn-container {
+  display: flex;
+  gap: 1rem; /* Adds space between buttons */
+  justify-content: flex-end; /* Aligns buttons to the right */
+  margin-top: 1rem; /* Adds spacing above the buttons */
+}
+
+/* General button styling */
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Edit button styling */
+.btn-edit {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+}
+
+.btn-edit:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Delete button styling */
+.btn-delete {
+  background-color: #f44336; /* Red background */
+  color: white; /* White text */
+}
+
+.btn-delete:hover {
+  background-color: #d32f2f; /* Slightly darker red on hover */
+}
+
+/* Disabled button styling (optional) */
+.btn:disabled {
+  background-color: #ccc; /* Gray background */
+  color: #666; /* Darker gray text */
+  cursor: not-allowed; /* Show "not allowed" cursor */
+  opacity: 0.7; /* Slightly transparent */
+}
+
+/* Add subtle shadow to buttons */
+.btn {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
