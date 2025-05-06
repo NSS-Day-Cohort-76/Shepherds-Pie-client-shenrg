@@ -2,12 +2,24 @@ import { useEffect, useState } from "react";
 import { GetAllOrders } from "../../services/orderService.jsx";
 import { Link } from "react-router-dom";
 import "./OrdersList.css";
+import {
+  assignDriverToOrder,
+  GetAllEmployees,
+  updateEmployeeStatus,
+} from "../../services/employeeService.jsx";
+import { OrderDetails } from "./OrderDetails.jsx";
 import { Orders } from "./Orders.jsx";
 
 export const OrdersList = () => {
   const [allOrders, setAllOrders] = useState([]);
   const [filteredOrders, setFilteredOrders] = useState([]);
-  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split("T")[0]); // Default to today
+  const [selectedDate, setSelectedDate] = useState(
+    new Date().toISOString().split("T")[0]
+  ); // Defaults to today
+  const [currentPage, setCurrentPage] = useState(1);
+  const ordersPerPage = 20;
+
+  const [employees, setEmployees] = useState([]);
 
   // Helper function to filter and sort orders based on the selected date
   const filterAndSortOrders = (orders, date) => {
@@ -22,53 +34,100 @@ export const OrdersList = () => {
       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   };
 
-  useEffect(() => {
-    GetAllOrders().then((ordersArray) => {
-      if (Array.isArray(ordersArray)) {
-        setAllOrders(ordersArray);
-        const sortedFilteredOrders = filterAndSortOrders(ordersArray, selectedDate);
-        setFilteredOrders(sortedFilteredOrders);
-      } else {
-        console.error("Fetched data is not an array:", ordersArray);
-      }
-    });
-  }, []);
-
-  // Whenever selectedDate changes, filter the orders again
-  useEffect(() => {
-    const sortedFilteredOrders = filterAndSortOrders(allOrders, selectedDate);
+useEffect(() => {
+  GetAllOrders().then((ordersArray) => {
+    setAllOrders(ordersArray);
+    const sortedFilteredOrders = filterAndSortOrders(
+      ordersArray,
+      selectedDate
+    );
     setFilteredOrders(sortedFilteredOrders);
-  }, [selectedDate, allOrders]);
+  });
+}, []);
 
-  // In OrdersList.jsx, add this before the return statement
-  useEffect(() => {
-    console.log("filteredOrders:", filteredOrders)
-  }, [filteredOrders])
+useEffect(() => {
+  GetAllEmployees().then((employeesArray) => {
+    const drivers = employeesArray.filter(
+      (emp) => emp.isDriver && !emp.onDelivery
+    );
+    setEmployees(drivers);
+  });
+}, []);
 
-  return (
-    <div className="order">
-      <h2>Orders</h2>
+const handleDriverAssign = async (orderId, driverId) => {
+  try {
+    await assignDriverToOrder(orderId, driverId);
+    await updateEmployeeStatus(driverId, { onDelivery: true });
+    const updatedOrders = await GetAllOrders();
+    setAllOrders(updatedOrders);
+  } catch (error) {
+    console.error("Error assigning driver:", error);
+  }
+};
 
-      <label htmlFor="datePicker">Select Date:</label>
-      <input
-        type="date"
-        id="datePicker"
-        value={selectedDate}
-        onChange={(e) => setSelectedDate(e.target.value)}
-      />
+// Whenever selectedDate or allOrders change, filter and reset to page 1
+useEffect(() => {
+  const sortedFilteredOrders = filterAndSortOrders(allOrders, selectedDate);
+  setFilteredOrders(sortedFilteredOrders);
+  setCurrentPage(1); // Reset to first page when date changes
+}, [selectedDate, allOrders]);
 
-      <article className="order">
-        {filteredOrders.length === 0 ? (
-          <p>No orders for {selectedDate}.</p>
-        ) : (
-          filteredOrders.map((orderObj) => (
-            <Orders
-              key={orderObj.id}
-              order={orderObj}
-            />
-          ))
-        )}
-      </article>
+const indexOfLastOrder = currentPage * ordersPerPage;
+const indexOfFirstOrder = indexOfLastOrder - ordersPerPage;
+const currentOrders = filteredOrders.slice(
+  indexOfFirstOrder,
+  indexOfLastOrder
+);
+const totalPages = Math.ceil(filteredOrders.length / ordersPerPage);
+
+// In OrdersList.jsx, add this before the return statement
+useEffect(() => {
+  console.log("filteredOrders:", filteredOrders)
+}, [filteredOrders])
+
+return (
+  <div className="order">
+    <h2>Orders</h2>
+
+    <label htmlFor="datePicker">Select Date:</label>
+    <input
+      type="date"
+      id="datePicker"
+      value={selectedDate}
+      onChange={(e) => setSelectedDate(e.target.value)}
+    />
+
+    <article className="order">
+      {filteredOrders.length === 0 ? (
+        <p>No orders for {selectedDate}.</p>
+      ) : (
+        filteredOrders.map((orderObj) => (
+          <Orders
+            key={orderObj.id}
+            order={orderObj}
+          />
+        ))
+      )}
+    </article>
+
+    <div>
+      {currentPage > 1 && (
+        <button
+          className="pagination-button"
+          onClick={() => setCurrentPage(currentPage - 1)}
+        >
+          Previous
+        </button>
+      )}
+      {currentPage < totalPages && (
+        <button
+          className="pagination-button"
+          onClick={() => setCurrentPage(currentPage + 1)}
+        >
+          Next
+        </button>
+      )}
     </div>
-  );
+  </div>
+);
 };

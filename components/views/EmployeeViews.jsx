@@ -9,28 +9,34 @@ import { OrdersList } from "../order/OrdersList.jsx";
 import { OrderForm } from "../order/OrderForm.jsx";
 import { SalesReport } from "../sales/SalesReport.jsx";
 import { OrderDetails } from "../order/OrderDetails.jsx";
+import { BrowserRouter } from "react-router-dom";
 import { EmployeeDetails } from "../employees/EmployeeDetails.jsx";
+import { AddPizza } from "../pizza/AddPizza.jsx";
+import { EditPizza } from "../pizza/EditPizza.jsx";
 
-export const EmployeeViews = ({}) => {
-  return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <>
-            <EmployeeNav />
-            <Outlet />
-          </>
-        }
-      >
-        <Route index element={<Welcome />} />
-        <Route path="list" element={<OrdersList />} />
-        <Route path="list/:orderId" element={<OrderDetails />} />
-        <Route path="employees" element={<EmployeeList />} />
-        <Route path="/employees/:employeeId" element={<EmployeeDetails />} />
-        <Route path="sales" element={<SalesReport />} />
-        <Route path="StartOrder" element={<OrderForm />} />
-      </Route>
-    </Routes>
-  );
-};
+export const EmployeeViews = ({ currentUser }) => {
+    return (
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <EmployeeNav />
+              <Outlet />
+            </>
+          }
+        >
+          <Route index element={<Welcome />} />
+          <Route path="list" element={<OrdersList currentUser={currentUser} />} />
+          <Route path="/list/:orderId" element={<OrderDetails currentUser={currentUser} />} />
+          <Route path="employees" element={<EmployeeList currentUser={currentUser} />} />
+          <Route path="/employees/:employeeId" element={<EmployeeDetails currentUser={currentUser} />} />
+          <Route path="sales" element={<SalesReport currentUser={currentUser} />} />
+          <Route path="StartOrder" element={<OrderForm currentUser={currentUser} />} />
+          <Route path="orders/:orderId/add-pizza" element={<AddPizza />} />
+          <Route path="orders/:orderId/edit-pizza/:pizzaId" element={<EditPizza />} />
+        </Route>
+      </Routes>
+    );
+  };
+  

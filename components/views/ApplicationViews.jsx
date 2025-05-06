@@ -1,25 +1,20 @@
-// PROBABLY NOT GOING TO USE, NO NEED FOR MULTIPLE VIEWS.. USE TERNARY CONDITIONAL RENDERING FOR isAdmin LATER ON..
+import { useEffect, useState } from "react";
+import { EmployeeViews } from "./EmployeeViews.jsx";
 
-// Will hold all views and incorporate functionality to determine if user is admin or employee
+export const ApplicationViews = () => {
+  const [currentUser, setCurrentUser] = useState(null); 
 
-// import { useEffect, useState } from "react"
-// import { AdminViews } from "./AdminViews.jsx"
-// import { EmployeeViews } from "./EmployeeViews.jsx"
+  useEffect(() => {
+    const localShepherdUser = localStorage.getItem("shepherd_user");
+    if (localShepherdUser) {
+      const shepherdUserObj = JSON.parse(localShepherdUser);
+      setCurrentUser(shepherdUserObj);
+    }
+  }, []);
 
+  if (!currentUser) {
+    return <div>Loading user...</div>;
+  }
 
-// export const ApplicationViews = () => {
-//     const [currentUser, setCurrentUser] = useState({})
-
-//     useEffect(() => {
-//         const localShepherdUser = localStorage.getItem("shepherd_user")
-//         const shepherdUserObj = JSON.parse(localShepherdUser)
-
-//         setCurrentUser(shepherdUserObj)
-//     }, [])
-
-//     return currentUser.isAdmin ? (
-//         <AdminViews currentUser={currentUser} />
-//     ) : (
-//         <EmployeeViews currentUser={currentUser} />
-//     )
-// } 
+  return <EmployeeViews currentUser={currentUser} />;
+};

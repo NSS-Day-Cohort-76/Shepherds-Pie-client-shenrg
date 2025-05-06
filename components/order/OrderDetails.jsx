@@ -10,7 +10,7 @@
 
 // Should be smaller buttons on the actual pizzas (see wireframe) to edit or remove those specific pizzas
 
-import { useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { getPizzasByOrderId } from "../../services/orderService.jsx"
 import { deletePizza } from "../../services/orderService.jsx"
@@ -19,7 +19,10 @@ import { PizzaCard } from "../pizza/PizzaCard.jsx"
 import { saveTip } from "../../services/orderService.jsx"
 import { cancelOrder } from "../../services/orderService.jsx"
 
-export const OrderDetails = ({ orderObj }) => {
+export const OrderDetails = () => {
+
+    const navigate = useNavigate()
+
     const [order, setOrder] = useState({
         id: 0,
         customerName: "",
@@ -114,6 +117,11 @@ export const OrderDetails = ({ orderObj }) => {
             {/* Basic order info */}
             <div className="order-info-container">
                 <div>
+                    <button onClick={() => navigate(`/orders/${orderId}/add-pizza`)}>
+                     Add Pizza
+                    </button>
+                </div>
+                <div>
                     <span className="order-info">Customer Name: </span>
                     {order?.customerName}
                 </div>
@@ -148,17 +156,24 @@ export const OrderDetails = ({ orderObj }) => {
 
             {/* Pizza list section */}
             {/* Pizza list section */}
-            <section className="pizza-card">
-                <h3>Pizzas in this Order:</h3>
-                {order?.pizzas?.map((pizza, index) => (
-                    <PizzaCard
-                        key={pizza.id}
-                        pizza={pizza}
-                        index={index}
-                        // onEdit={handleEditPizza}
-                        onDelete={handleDeletePizza} />
-                ))}
-            </section>
+<section className="order-container">
+    <h3>Pizzas in this Order:</h3>
+    {order?.pizzas?.map((pizza, index) => (
+        <div key={pizza.id} className="orders">
+            <div className="order-details">
+                <p>Pizza #{index + 1}</p>
+                <p>Size: {pizza.size}</p>
+                <p>Sauce: {pizza.sauce}</p>
+                <p>Cheese: {pizza.cheese}</p>
+                <p>Cost: {formatCurrency(pizza.cost)}</p>
+            </div>
+            <div className="btn-container">
+                <button onClick={() => navigate(`/orders/${orderId}/edit-pizza/${pizza.id}`)}>Edit</button>
+                <button onClick={() => handleDeletePizza(pizza.id)}>Delete</button>
+            </div>
+        </div>
+    ))}
+</section>
         </section>
     )
 }
