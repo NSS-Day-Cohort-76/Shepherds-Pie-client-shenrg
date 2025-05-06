@@ -154,7 +154,7 @@ export const AddPizza = () => {
                 <button type="submit">
                     Add Pizza
                 </button>
-                <button type="button" onClick={() => navigate(`/orders/${orderId}`)}>Back to Orders</button>
+                <button type="button" onClick={() => navigate(`/list`)}>Back to Orders</button>
             </div>        
         </form>
     )

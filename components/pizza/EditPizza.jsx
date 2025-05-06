@@ -51,6 +51,8 @@ export const EditPizza = () => {
         e.preventDefault()
 
         const updatedPizza = {
+            id: pizzaId,
+            orderId: parseInt(orderId),
             sizeId: pizza.sizeId,
             sauceId: pizza.sauceId,
             cheeseId: pizza.cheeseId
@@ -59,7 +61,7 @@ export const EditPizza = () => {
             .then(() => updatePizzaToppings(pizzaId, pizza.toppingIds))
             .then(() => {
                 alert("Pizza updated!")
-                navigate(`/orders/${orderId}`)
+                navigate(`/list/${orderId}`)
             })
     }
     return (
@@ -123,7 +125,7 @@ export const EditPizza = () => {
 
             <div className="button-group">
                 <button type="submit">Update Pizza</button>
-                <button type="button" onClick={() => navigate(`/orders/${orderId}`)}>Cancel</button>
+                <button type="button" onClick={() => navigate(`/list`)}>Cancel</button>
             </div>
         </form>
     )

@@ -33,7 +33,7 @@ export const EmployeeViews = ({}) => {
         <Route path="sales" element={<SalesReport />} />
         <Route path="StartOrder" element={<OrderForm />} />
         <Route path="orders/:orderId/add-pizza" element={<AddPizza />} />
-        <Route path="orders/edit-pizza" element={<EditPizza />} />
+        <Route path="orders/:orderId/edit-pizza/:pizzaId" element={<EditPizza />} />
       </Route>
     </Routes>
   );

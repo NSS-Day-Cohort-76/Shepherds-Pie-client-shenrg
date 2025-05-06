@@ -83,7 +83,7 @@ export const OrderDetails = () => {
                 <p>Cost: {formatCurrency(pizza.cost)}</p>
             </div>
             <div className="btn-container">
-                <button onClick={() => handleEditPizza(pizza.id)}>Edit</button>
+                <button onClick={() => navigate(`/orders/${orderId}/edit-pizza/${pizza.id}`)}>Edit</button>
                 <button onClick={() => handleDeletePizza(pizza.id)}>Delete</button>
             </div>
         </div>
