@@ -23,3 +23,27 @@ export const getEmployeeByEmail = (email) => {
   ).then((res) => res.json())
       
 }
+
+export const assignDriverToOrder = (orderId, driverId) => {
+  return fetch(`http://localhost:8088/orders/${orderId}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ driverId }),
+  }).then((res) => res.json());
+};
+
+export const updateEmployeeStatus = async (employeeId, data) => {
+  return fetch(`http://localhost:8088/employees/${employeeId}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  }).then((res) => res.json());
+};
+
+export const setDriverOnDelivery = (driverId, onDelivery) => {
+  return fetch(`http://localhost:8088/employees/${driverId}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ onDelivery }),
+  });
+};

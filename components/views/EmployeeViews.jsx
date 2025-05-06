@@ -11,6 +11,8 @@ import { SalesReport } from "../sales/SalesReport.jsx";
 import { OrderDetails } from "../order/OrderDetails.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { EmployeeDetails } from "../employees/EmployeeDetails.jsx";
+import { AddPizza } from "../pizza/AddPizza.jsx";
+import { EditPizza } from "../pizza/EditPizza.jsx";
 
 export const EmployeeViews = ({ currentUser }) => {
     return (
@@ -31,6 +33,8 @@ export const EmployeeViews = ({ currentUser }) => {
           <Route path="/employees/:employeeId" element={<EmployeeDetails currentUser={currentUser} />} />
           <Route path="sales" element={<SalesReport currentUser={currentUser} />} />
           <Route path="StartOrder" element={<OrderForm currentUser={currentUser} />} />
+          <Route path="orders/:orderId/add-pizza" element={<AddPizza />} />
+          <Route path="orders/:orderId/edit-pizza/:pizzaId" element={<EditPizza />} />
         </Route>
       </Routes>
     );

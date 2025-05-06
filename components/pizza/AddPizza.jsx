@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react"
 import { addPizzas, addPizzaTopping, getCheeses, getSauces, getSizes, getToppings } from "../../services/pizzaService"
 import './AddPizza.css'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 // The Add Pizza component will be reachable from frame #2 and frame #5. When a user is first creating their order, they will be directed here after filling out the 
 // customer info. If they click on the 'add pizza' button from the order details page (frame 5) then they will also be directed back to this page. 
@@ -15,8 +15,9 @@ import { useNavigate } from "react-router-dom"
 // Should be an "Add Pizza" button that adds completed pizza option to state, but does not finalize the order.
 
 // For *Edit Pizza* -> they will be directed to frame #7 where they can modify all of the selections for their pizza. Also needs a window alert  
-export const AddPizza = ({orderId}) => {
+export const AddPizza = () => {
 
+    const {orderId} = useParams()
     const navigate = useNavigate()
 
     const initialPizzaState = {
@@ -64,7 +65,7 @@ export const AddPizza = ({orderId}) => {
         e.preventDefault()
 
         const pizzaToSave = {
-            orderId: 1,
+            orderId: parseInt(orderId),
             sizeId: pizza.sizeId,
             sauceId: pizza.sauceId,
             cheeseId: pizza.cheeseId,
@@ -153,7 +154,7 @@ export const AddPizza = ({orderId}) => {
                 <button type="submit">
                     Add Pizza
                 </button>
-                <button type="button" onClick={() => navigate(`/orders/${orderId}`)}>Back to Orders</button>
+                <button type="button" onClick={() => navigate(`/list`)}>Back to Orders</button>
             </div>        
         </form>
     )
