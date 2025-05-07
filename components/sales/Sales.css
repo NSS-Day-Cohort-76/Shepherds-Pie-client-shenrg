@@ -1,3 +1,4 @@
+/* General container for the sales report */
 .sales-report-container {
     font-family: Arial, sans-serif;
     margin: 20px auto;
@@ -7,14 +8,18 @@
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #555;
+    animation: fadeIn 0.3s ease;
 }
 
+/* Heading */
 .sales-report-container h2 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
 }
 
+/* Label styling */
 .sales-report-container label {
     font-weight: bold;
     display: block;
@@ -22,6 +27,7 @@
     color: #555;
 }
 
+/* Input field for month selection */
 .sales-report-container input[type="month"] {
     display: block;
     margin-bottom: 20px;
@@ -31,25 +37,30 @@
     border-radius: 4px;
     width: 100%;
     max-width: 300px;
+    background-color: #fff;
 }
 
+/* Section headings */
 .sales-report-container h3 {
     margin-top: 20px;
     color: #444;
 }
 
+/* Paragraphs */
 .sales-report-container p {
     font-size: 16px;
     margin: 10px 0;
     color: #555;
 }
 
+/* Unordered list styling */
 .sales-report-container ul {
     list-style-type: none;
     padding: 0;
     margin: 20px 0;
 }
 
+/* List items */
 .sales-report-container ul li {
     background-color: #fff;
     margin-bottom: 10px;
@@ -61,6 +72,50 @@
     color: #333;
 }
 
+/* Alternate list items for a subtle stripe effect */
 .sales-report-container ul li:nth-child(odd) {
     background-color: #f1f1f1;
+}
+
+/* Clickable items (hover & pointer) */
+.clickable {
+    cursor: pointer;
+    color: #0077cc;
+    transition: background-color 0.2s ease;
+}
+
+.clickable:hover {
+    background-color: #e6f0fa;
+}
+
+/* Highlight selected item */
+.selected {
+    background-color: #dff0ff;
+    border-color: #3399ff;
+    font-weight: bold;
+}
+
+/* Breakdown box styling */
+.breakdown-box {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #555;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

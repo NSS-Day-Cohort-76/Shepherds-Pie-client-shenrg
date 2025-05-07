@@ -487,19 +487,6 @@
       "customerName": "Morgan Brown",
       "customerPhone": "555-555-6666",
       "orderStatus": "In Progress"
-    },
-    {
-      "customerName": "bob b",
-      "customerPhone": "534-153-3413",
-      "createdAt": "2025-05-06T00:18:16.013Z",
-      "id": 11
-    },
-    {
-      "customerName": "David West",
-      "customerPhone": "123-456-4455",
-      "tip": 0,
-      "createdAt": "2025-05-06T20:36:23.644Z",
-      "id": 12
     }
-]
+  ]
 }

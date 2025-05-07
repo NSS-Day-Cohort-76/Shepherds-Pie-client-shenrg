@@ -54,6 +54,7 @@ export const GetPizzasWithToppings = async () => {
         return [];
     }
 };
+
 export const getPizzaById = (pizzaId) => {
     return fetch(`http://localhost:8088/pizzas/${pizzaId}?_embed=pizzaToppings&_expand=size&_expand=sauce&_expand=cheese`)
     .then(res => res.json())
