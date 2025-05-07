@@ -1,0 +1,84 @@
+/* Container for each pizza card */
+.pizza-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pizza-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header for pizza details */
+.pizza-card-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* Details section */
+.pizza-card-details {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.pizza-card-details p {
+    margin: 0.25rem 0;
+}
+
+/* Cost styling */
+.pizza-card-cost {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4CAF50; /* Green for cost */
+    margin-top: 0.5rem;
+}
+
+/* Button container */
+.pizza-card-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+/* General button styling */
+.pizza-card-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Edit button */
+.pizza-card-button-edit {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.pizza-card-button-edit:hover {
+    background-color: #45a049;
+}
+
+/* Delete button */
+.pizza-card-button-delete {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+.pizza-card-button-delete:hover {
+    background-color: #d32f2f;
+}

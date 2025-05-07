@@ -14,7 +14,10 @@ export const OrderForm = ({ currentUser }) => {
     const [order, setOrder] = useState({
       customerName: "",
       customerPhone: "",
+      pizzaId: 0,
+      orderStatus: "In Progress",
       tip: 0
+      
     })
 
     const navigate = useNavigate()
@@ -27,6 +30,8 @@ export const OrderForm = ({ currentUser }) => {
                 employeeId: currentUser?.id,
                 customerName: order.customerName,
                 customerPhone: order.customerPhone,
+                pizzaId: order.pizzaId,
+                orderStatus: order.orderStatus,
                 tip: order.tip,
                 createdAt: new Date().toISOString(),
             }

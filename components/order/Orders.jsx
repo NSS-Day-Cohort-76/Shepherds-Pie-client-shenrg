@@ -1,6 +1,24 @@
 import { Link } from "react-router-dom"
+import { useState, useEffect } from "react";
 
-export const Orders = ({ order }) => {
+
+
+export const Orders = ({ order, employees }) => {
+
+
+    const handleDriverAssign = async (orderId, driverId) => {
+      try {
+        await assignDriverToOrder(orderId, driverId);
+        await updateEmployeeStatus(driverId, { onDelivery: true });
+        const updatedOrders = await GetAllOrders();
+        setAllOrders(updatedOrders);
+      } catch (error) {
+        console.error("Error assigning driver:", error);
+      }
+    };
+
+
+
     return (
         <section className="order">
             <Link to={`/list/${order.id}`}>
@@ -11,8 +29,25 @@ export const Orders = ({ order }) => {
                         <div className="order-info">Customer Name</div>
                         <div>{order.customerName}</div>
                     </div>
+                    <div>
+                        <div className="order-info">Customer Number</div>
+                        <div>{order.customerPhone}</div>
+                    </div>
                 </footer>
             </Link>
+            <label htmlFor={`driver-${order.id}`}>Assign Driver:</label>
+                <select
+                  id={`driver-${order.id}`}
+                  onChange={(e) => handleDriverAssign(order.id, parseInt(e.target.value))}
+                  defaultValue=""
+                >
+                  <option value="" disabled>Select a driver</option>
+                  {employees.map((driver) => (
+                    <option key={driver.id} value={driver.id}>
+                      {driver.name} {driver.onDelivery ? "(On Delivery)" : ""}
+                    </option>
+                  ))}
+                </select>
         </section>
     )
 }
