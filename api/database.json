@@ -329,13 +329,6 @@
       "sauceId": 4,
       "cheeseId": 2,
       "id": 34
-    },
-    {
-      "orderId": 40,
-      "sizeId": 5,
-      "sauceId": 1,
-      "cheeseId": 1,
-      "id": 35
     }
   ],
   "pizzaToppings": [
@@ -473,21 +466,6 @@
       "pizzaId": 34,
       "toppingId": 2,
       "id": 55
-    },
-    {
-      "pizzaId": 35,
-      "toppingId": 5,
-      "id": 56
-    },
-    {
-      "pizzaId": 35,
-      "toppingId": 4,
-      "id": 57
-    },
-    {
-      "pizzaId": 35,
-      "toppingId": 6,
-      "id": 58
     }
   ],
   "orders": [
