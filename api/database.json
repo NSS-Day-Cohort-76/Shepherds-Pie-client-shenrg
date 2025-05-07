@@ -219,41 +219,6 @@
   ],
   "pizzas": [
     {
-      "id": 1,
-      "sizeId": 1,
-      "sauceId": 4,
-      "cheeseId": 3,
-      "orderId": 1
-    },
-    {
-      "id": 2,
-      "sizeId": 5,
-      "sauceId": 2,
-      "cheeseId": 3,
-      "orderId": 1
-    },
-    {
-      "id": 3,
-      "sizeId": 3,
-      "sauceId": 4,
-      "cheeseId": 6,
-      "orderId": 1
-    },
-    {
-      "id": 4,
-      "sizeId": 5,
-      "sauceId": 3,
-      "cheeseId": 5,
-      "orderId": 2
-    },
-    {
-      "id": 5,
-      "sizeId": 2,
-      "sauceId": 3,
-      "cheeseId": 2,
-      "orderId": 2
-    },
-    {
       "id": 18,
       "sizeId": 4,
       "sauceId": 1,
@@ -367,96 +332,6 @@
     }
   ],
   "pizzaToppings": [
-    {
-      "id": 1,
-      "pizzaId": 1,
-      "toppingId": 1
-    },
-    {
-      "id": 2,
-      "pizzaId": 1,
-      "toppingId": 2
-    },
-    {
-      "id": 3,
-      "pizzaId": 1,
-      "toppingId": 3
-    },
-    {
-      "id": 4,
-      "pizzaId": 1,
-      "toppingId": 4
-    },
-    {
-      "id": 5,
-      "pizzaId": 2,
-      "toppingId": 8
-    },
-    {
-      "id": 6,
-      "pizzaId": 2,
-      "toppingId": 7
-    },
-    {
-      "id": 7,
-      "pizzaId": 2,
-      "toppingId": 5
-    },
-    {
-      "id": 8,
-      "pizzaId": 2,
-      "toppingId": 4
-    },
-    {
-      "id": 9,
-      "pizzaId": 3,
-      "toppingId": 3
-    },
-    {
-      "id": 10,
-      "pizzaId": 3,
-      "toppingId": 4
-    },
-    {
-      "id": 11,
-      "pizzaId": 3,
-      "toppingId": 5
-    },
-    {
-      "id": 12,
-      "pizzaId": 3,
-      "toppingId": 2
-    },
-    {
-      "id": 13,
-      "pizzaId": 4,
-      "toppingId": 6
-    },
-    {
-      "id": 14,
-      "pizzaId": 4,
-      "toppingId": 3
-    },
-    {
-      "id": 15,
-      "pizzaId": 4,
-      "toppingId": 8
-    },
-    {
-      "id": 16,
-      "pizzaId": 4,
-      "toppingId": 5
-    },
-    {
-      "id": 17,
-      "pizzaId": 5,
-      "toppingId": 2
-    },
-    {
-      "id": 18,
-      "pizzaId": 5,
-      "toppingId": 3
-    },
     {
       "pizzaId": 21,
       "toppingId": 1,
@@ -591,77 +466,11 @@
       "pizzaId": 34,
       "toppingId": 2,
       "id": 55
-    },
-    {
-      "pizzaId": 34,
-      "toppingId": 3,
-      "id": 56
     }
   ],
   "orders": [
     {
-      "id": 1,
-      "pizzaId": 3,
-      "employeeId": 1,
-      "delivererId": 2,
-      "tip": 3.5,
-      "totalCost": 8.85,
-      "createdAt": "2025-03-05T14:30:00",
-      "customerName": "Dana White",
-      "customerPhone": "555-456-7890",
-      "orderStatus": "Completed"
-    },
-    {
-      "id": 2,
-      "pizzaId": 5,
-      "employeeId": 2,
-      "delivererId": 1,
-      "tip": 5,
-      "totalCost": 20.7,
-      "createdAt": "2025-03-18T18:45:00",
-      "customerName": "Bob Smith",
-      "customerPhone": "555-234-5678",
-      "orderStatus": "Completed"
-    },
-    {
-      "id": 4,
-      "pizzaId": 2,
-      "employeeId": 3,
-      "delivererId": 1,
-      "tip": 4.25,
-      "totalCost": 21.5,
-      "createdAt": "2025-04-10T19:00:00",
-      "customerName": "Evan Green",
-      "customerPhone": "555-567-8901",
-      "orderStatus": "Completed"
-    },
-    {
-      "id": 6,
-      "pizzaId": 4,
-      "employeeId": 1,
-      "delivererId": 3,
-      "tip": 6,
-      "totalCost": 8.65,
-      "createdAt": "2025-05-05T20:40:00",
-      "customerName": "Ian Black",
-      "customerPhone": "555-901-2345",
-      "orderStatus": "Completed"
-    },
-    {
-      "id": 8,
-      "pizzaId": 2,
-      "employeeId": 1,
-      "delivererId": 2,
-      "tip": 5,
-      "totalCost": 25.5,
-      "createdAt": "2025-05-05T10:30:00",
-      "customerName": "Alex Smith",
-      "customerPhone": "555-111-2222",
-      "orderStatus": "Completed"
-    },
-    {
       "id": 9,
-      "pizzaId": 1,
       "employeeId": 2,
       "delivererId": 3,
       "tip": 3,
@@ -673,7 +482,6 @@
     },
     {
       "id": 10,
-      "pizzaId": 3,
       "employeeId": 3,
       "delivererId": 3,
       "tip": 5,
@@ -682,6 +490,334 @@
       "customerName": "Morgan Brown",
       "customerPhone": "555-555-6666",
       "orderStatus": "In Progress"
+    },
+    {
+      "id": 11,
+      "employeeId": 1,
+      "delivererId": 2,
+      "tip": 6,
+      "totalCost": 18.99,
+      "createdAt": "2025-05-06T09:15:00",
+      "customerName": "Alex Johnson",
+      "customerPhone": "555-111-2222",
+      "orderStatus": "Delivered"
+    },
+    {
+      "id": 12,
+      "employeeId": 2,
+      "delivererId": 1,
+      "tip": 4.5,
+      "totalCost": 16.45,
+      "createdAt": "2025-05-06T09:30:00",
+      "customerName": "Taylor Smith",
+      "customerPhone": "555-222-3333",
+      "orderStatus": "Completed"
+    },
+    {
+      "id": 13,
+      "employeeId": 3,
+      "delivererId": 4,
+      "tip": 3,
+      "totalCost": 22.75,
+      "createdAt": "2025-05-06T10:05:00",
+      "customerName": "Jordan Lee",
+      "customerPhone": "555-333-4444",
+      "orderStatus": "In Progress"
+    },
+    {
+      "id": 14,
+      "employeeId": 1,
+      "delivererId": 3,
+      "tip": 7,
+      "totalCost": 19.5,
+      "createdAt": "2025-05-06T10:20:00",
+      "customerName": "Casey Wilson",
+      "customerPhone": "555-444-5555",
+      "orderStatus": "Out for Delivery"
+    },
+    {
+      "id": 15,
+      "employeeId": 2,
+      "delivererId": 2,
+      "tip": 8.25,
+      "totalCost": 28.99,
+      "createdAt": "2025-05-06T10:45:00",
+      "customerName": "Riley Davis",
+      "customerPhone": "555-555-7777",
+      "orderStatus": "Preparing"
+    },
+    {
+      "id": 16,
+      "employeeId": 4,
+      "delivererId": 1,
+      "tip": 4,
+      "totalCost": 15.75,
+      "createdAt": "2025-05-06T11:00:00",
+      "customerName": "Sam Garcia",
+      "customerPhone": "555-666-8888",
+      "orderStatus": "Completed"
+    },
+    {
+      "id": 17,
+      "employeeId": 2,
+      "delivererId": 4,
+      "tip": 5.5,
+      "totalCost": 21.25,
+      "createdAt": "2025-05-06T11:15:00",
+      "customerName": "Jamie Martin",
+      "customerPhone": "555-777-9999",
+      "orderStatus": "In Progress"
+    },
+    {
+      "id": 18,
+      "employeeId": 1,
+      "delivererId": 3,
+      "tip": 6.75,
+      "totalCost": 24.5,
+      "createdAt": "2025-05-06T11:30:00",
+      "customerName": "Drew Thompson",
+      "customerPhone": "555-888-0000",
+      "orderStatus": "Out for Delivery"
+    },
+    {
+      "id": 19,
+      "employeeId": 3,
+      "delivererId": 2,
+      "tip": 4.25,
+      "totalCost": 17.99,
+      "createdAt": "2025-05-06T11:45:00",
+      "customerName": "Avery Jones",
+      "customerPhone": "555-999-1111",
+      "orderStatus": "Completed"
+    },
+    {
+      "id": 20,
+      "employeeId": 2,
+      "delivererId": 1,
+      "tip": 7.5,
+      "totalCost": 26.75,
+      "createdAt": "2025-05-06T12:00:00",
+      "customerName": "Parker Williams",
+      "customerPhone": "555-000-2222",
+      "orderStatus": "Delivered"
+    },
+    {
+      "id": 21,
+      "employeeId": 4,
+      "delivererId": 3,
+      "tip": 5,
+      "totalCost": 16.99,
+      "createdAt": "2025-05-06T12:15:00",
+      "customerName": "Quinn Brown",
+      "customerPhone": "555-111-3333",
+      "orderStatus": "Preparing"
+    },
+    {
+      "id": 22,
+      "employeeId": 1,
+      "delivererId": 4,
+      "tip": 6.5,
+      "totalCost": 23.25,
+      "createdAt": "2025-05-06T12:30:00",
+      "customerName": "Blake Miller",
+      "customerPhone": "555-222-4444",
+      "orderStatus": "In Progress"
+    },
+    {
+      "id": 23,
+      "employeeId": 3,
+      "delivererId": 2,
+      "tip": 4.75,
+      "totalCost": 18.5,
+      "createdAt": "2025-05-06T12:45:00",
+      "customerName": "Reese Davis",
+      "customerPhone": "555-333-5555",
+      "orderStatus": "Out for Delivery"
+    },
+    {
+      "id": 24,
+      "employeeId": 2,
+      "delivererId": 1,
+      "tip": 7.25,
+      "totalCost": 25.99,
+      "createdAt": "2025-05-06T13:00:00",
+      "customerName": "Cameron White",
+      "customerPhone": "555-444-6666",
+      "orderStatus": "Completed"
+    },
+    {
+      "id": 25,
+      "employeeId": 1,
+      "delivererId": 3,
+      "tip": 8,
+      "totalCost": 27.75,
+      "createdAt": "2025-05-06T13:15:00",
+      "customerName": "Jordan Harris",
+      "customerPhone": "555-555-7777",
+      "orderStatus": "Delivered"
+    },
+    {
+      "id": 26,
+      "employeeId": 3,
+      "delivererId": 4,
+      "tip": 4.5,
+      "totalCost": 15.99,
+      "createdAt": "2025-05-06T13:30:00",
+      "customerName": "Casey Martinez",
+      "customerPhone": "555-666-8888",
+      "orderStatus": "Preparing"
+    },
+    {
+      "id": 27,
+      "employeeId": 2,
+      "delivererId": 2,
+      "tip": 5.75,
+      "totalCost": 22.25,
+      "createdAt": "2025-05-06T13:45:00",
+      "customerName": "Riley Anderson",
+      "customerPhone": "555-777-9999",
+      "orderStatus": "In Progress"
+    },
+    {
+      "id": 28,
+      "employeeId": 4,
+      "delivererId": 1,
+      "tip": 6.25,
+      "totalCost": 19.75,
+      "createdAt": "2025-05-06T14:00:00",
+      "customerName": "Taylor Clark",
+      "customerPhone": "555-888-0000",
+      "orderStatus": "Out for Delivery"
+    },
+    {
+      "id": 29,
+      "employeeId": 1,
+      "delivererId": 3,
+      "tip": 5.25,
+      "totalCost": 23.99,
+      "createdAt": "2025-05-06T14:15:00",
+      "customerName": "Morgan Lewis",
+      "customerPhone": "555-999-1111",
+      "orderStatus": "Completed"
+    },
+    {
+      "id": 30,
+      "employeeId": 3,
+      "delivererId": 2,
+      "tip": 7.75,
+      "totalCost": 29.5,
+      "createdAt": "2025-05-06T14:30:00",
+      "customerName": "Alex Rodriguez",
+      "customerPhone": "555-000-2222",
+      "orderStatus": "Delivered"
+    },
+    {
+      "id": 31,
+      "employeeId": 2,
+      "delivererId": 4,
+      "tip": 4.25,
+      "totalCost": 16.25,
+      "createdAt": "2025-05-06T14:45:00",
+      "customerName": "Jamie Walker",
+      "customerPhone": "555-111-3333",
+      "orderStatus": "Preparing"
+    },
+    {
+      "id": 32,
+      "employeeId": 1,
+      "delivererId": 1,
+      "tip": 6,
+      "totalCost": 21.75,
+      "createdAt": "2025-05-06T15:00:00",
+      "customerName": "Drew Parker",
+      "customerPhone": "555-222-4444",
+      "orderStatus": "In Progress"
+    },
+    {
+      "id": 33,
+      "employeeId": 4,
+      "delivererId": 3,
+      "tip": 5.5,
+      "totalCost": 18.25,
+      "createdAt": "2025-05-06T15:15:00",
+      "customerName": "Avery Hall",
+      "customerPhone": "555-333-5555",
+      "orderStatus": "Out for Delivery"
+    },
+    {
+      "id": 34,
+      "employeeId": 3,
+      "delivererId": 2,
+      "tip": 7,
+      "totalCost": 24.99,
+      "createdAt": "2025-05-06T15:30:00",
+      "customerName": "Parker Evans",
+      "customerPhone": "555-444-6666",
+      "orderStatus": "Completed"
+    },
+    {
+      "id": 35,
+      "employeeId": 1,
+      "delivererId": 4,
+      "tip": 8.5,
+      "totalCost": 28.25,
+      "createdAt": "2025-05-06T15:45:00",
+      "customerName": "Quinn Young",
+      "customerPhone": "555-555-7777",
+      "orderStatus": "Delivered"
+    },
+    {
+      "id": 36,
+      "employeeId": 2,
+      "delivererId": 1,
+      "tip": 4.75,
+      "totalCost": 15.5,
+      "createdAt": "2025-05-06T16:00:00",
+      "customerName": "Blake Turner",
+      "customerPhone": "555-666-8888",
+      "orderStatus": "Preparing"
+    },
+    {
+      "id": 37,
+      "employeeId": 4,
+      "delivererId": 3,
+      "tip": 5.25,
+      "totalCost": 22.5,
+      "createdAt": "2025-05-06T16:15:00",
+      "customerName": "Reese Cooper",
+      "customerPhone": "555-777-9999",
+      "orderStatus": "In Progress"
+    },
+    {
+      "id": 38,
+      "employeeId": 1,
+      "delivererId": 2,
+      "tip": 6.5,
+      "totalCost": 19.25,
+      "createdAt": "2025-05-06T16:30:00",
+      "customerName": "Cameron Scott",
+      "customerPhone": "555-888-0000",
+      "orderStatus": "Out for Delivery"
+    },
+    {
+      "id": 39,
+      "employeeId": 3,
+      "delivererId": 4,
+      "tip": 5.75,
+      "totalCost": 25.25,
+      "createdAt": "2025-05-06T16:45:00",
+      "customerName": "Jordan Murphy",
+      "customerPhone": "555-999-1111",
+      "orderStatus": "Completed"
+    },
+    {
+      "employeeId": 7,
+      "customerName": "David McJonBrandonson II",
+      "customerPhone": "123-123-1234",
+      "orderStatus": "In Progress",
+      "tip": 50,
+      "createdAt": "2025-05-07T19:39:53.354Z",
+      "id": 40
     }
   ]
 }

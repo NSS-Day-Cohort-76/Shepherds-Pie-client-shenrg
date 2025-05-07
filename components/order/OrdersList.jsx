@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { GetAllOrders } from "../../services/orderService.jsx";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./OrdersList.css";
 import {
   assignDriverToOrder,
@@ -54,16 +54,6 @@ useEffect(() => {
   });
 }, []);
 
-const handleDriverAssign = async (orderId, driverId) => {
-  try {
-    await assignDriverToOrder(orderId, driverId);
-    await updateEmployeeStatus(driverId, { onDelivery: true });
-    const updatedOrders = await GetAllOrders();
-    setAllOrders(updatedOrders);
-  } catch (error) {
-    console.error("Error assigning driver:", error);
-  }
-};
 
 // Whenever selectedDate or allOrders change, filter and reset to page 1
 useEffect(() => {
@@ -101,7 +91,7 @@ return (
       {filteredOrders.length === 0 ? (
         <p>No orders for {selectedDate}.</p>
       ) : (
-        filteredOrders.map((orderObj) => (
+        currentOrders.map((orderObj) => (
           <Orders
             key={orderObj.id}
             order={orderObj}
