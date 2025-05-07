@@ -1,47 +1,122 @@
-.orders {
-    display: flex;
-    flex-direction: column;
-  }
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #e9ecef; /* Light gray background for better contrast */
+  color: #212529; /* Darker text color for readability */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* App Container */
+.orders-container {
+  max-width: 1200px; /* Centered layout with a max width */
+  margin: 2rem auto; /* Center horizontally and add vertical spacing */
+  padding: 1.5rem;
+  border-radius: 0.75rem; /* Rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow for contrast */
+}
+
+/* Header Styling */
+.orders-container > h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0056b3; /* Darker blue for headers */
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase; /* Add emphasis with uppercase text */
+}
+
+/* Order Cards */
+.order {
+  background-color: #f8f9fa; /* Slightly off-white for contrast */
+  border: 1px solid gray; /* Subtle border with better contrast */
+  margin: 1.5rem 0;
+  border-radius: 0.5rem; /* Rounded corners */
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.order:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Order Info */
+.order-info {
+  font-size: 1.1rem;
+  font-weight: 600; /* Slightly bolder text for emphasis */
+  color: #495057; /* Neutral dark gray for better contrast */
+  margin-bottom: 0.75rem;
+}
+
+/* Footer Styling */
+.order > footer {
+  display: flex;
+  border-top: 1px solid #dee2e6; /* Subtle border for separation */
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  margin-top: 1.5rem;
+}
+
+.order > footer > * {
+  flex-basis: 22%;
+  text-align: center;
+  font-size: 1rem;
+  color: #6c757d; /* Muted gray for footer text */
+}
+
+/* Buttons */
+.filter-btn,
+button {
+  background-color: #007bff; /* Primary blue */
+  color: #ffffff; /* White text for contrast */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.filter-btn:hover,
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.filter-btn:active,
+button:active {
+  background-color: #003f7f; /* Even darker blue on click */
+  transform: scale(0.95); /* Slight shrink on click */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .orders-container {
-    margin: 1rem 5rem 0rem 5rem;
-  }
-
-  .orders-container > h2 {
-    margin-top: 0;
+      margin: 1rem;
+      padding: 1rem;
   }
 
   .order {
-    background-color: var(--white);
-    border: 1px solid var(--outline);
-    margin: 0.5rem 0;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
+      padding: 1rem;
   }
 
-  /* This targets all the child elements of the element with the .order class */
-  .order > * {
-    padding: 0.5rem;
-  }
-
-  .order-info {
-    color: var(--outline);
-    font-family: "Roboto", sans-serif;
-  }
-
-  /* This targets any footer element that is a child of an element with the .order class */
-  .order > footer {
-    display: flex;
-    border-top: 1px solid var(--outline);
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  /* This targets any element that is a child of a footer that is a child of an element with the .order class */
   .order > footer > * {
-    flex-basis: 22%;
+      flex-basis: 100%;
+      margin-bottom: 0.5rem;
   }
 
-  .filter-btn {
-    margin-right: 2rem;
+  .order > footer {
+      flex-direction: column;
   }
+}

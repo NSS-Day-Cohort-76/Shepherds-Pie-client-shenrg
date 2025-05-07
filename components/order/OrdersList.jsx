@@ -105,6 +105,7 @@ return (
           <Orders
             key={orderObj.id}
             order={orderObj}
+            employees={employees}
           />
         ))
       )}

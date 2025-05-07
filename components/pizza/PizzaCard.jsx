@@ -1,6 +1,8 @@
+import "./PizzaCard.css"
+
 export const PizzaCard = ({ pizza, index, onEdit, onDelete }) => {
 
-const formatCurrency = (amount) => {
+    const formatCurrency = (amount) => {
         return new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD",
@@ -8,11 +10,11 @@ const formatCurrency = (amount) => {
     }
 
     return (
-        <div key={pizza.id} className="orders">
-            <div className="order-details">
+        <div key={pizza.id} className="pizza-card">
+            <div className="pizza-details">
                 <p>Pizza #{index + 1}</p>
             </div>
-            <div className="btn-container">
+            <div className="pizza-btn-container">
                 <button 
                     onClick={() => onEdit(pizza.id)}
                     className="btn btn-edit"

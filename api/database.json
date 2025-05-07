@@ -14,7 +14,7 @@
       "phone": "512-555-0172",
       "address": "455 Maple Ave, Nashville, TN 37201",
       "id": 2,
-      "onDelivery": false 
+      "onDelivery": false
     },
     {
       "id": 3,
@@ -61,7 +61,7 @@
       "name": "Elijah Ramirez",
       "email": "elijah.ramirez@gmail.com",
       "isDriver": true,
-      "isAdmin": false,
+      "isAdmin": true,
       "address": "600 Spruce Ct, Nashville, TN 37201",
       "phone": "786-555-0184",
       "onDelivery": true
@@ -254,13 +254,6 @@
       "orderId": 2
     },
     {
-      "id": 17,
-      "sizeId": 4,
-      "sauceId": 1,
-      "cheeseId": 3,
-      "orderId": 10
-    },
-    {
       "id": 18,
       "sizeId": 4,
       "sauceId": 1,
@@ -273,6 +266,104 @@
       "sauceId": 1,
       "cheeseId": 3,
       "orderId": 10
+    },
+    {
+      "orderId": 10,
+      "sizeId": 5,
+      "sauceId": 1,
+      "cheeseId": 1,
+      "id": 20
+    },
+    {
+      "orderId": 10,
+      "sizeId": 5,
+      "sauceId": 1,
+      "cheeseId": 1,
+      "id": 21
+    },
+    {
+      "orderId": 10,
+      "sizeId": 1,
+      "sauceId": 1,
+      "cheeseId": 1,
+      "id": 23
+    },
+    {
+      "orderId": 12,
+      "sizeId": 1,
+      "sauceId": 2,
+      "cheeseId": 1,
+      "id": 24
+    },
+    {
+      "orderId": 12,
+      "sizeId": 3,
+      "sauceId": 3,
+      "cheeseId": 3,
+      "id": 25
+    },
+    {
+      "orderId": 12,
+      "sizeId": 4,
+      "sauceId": 1,
+      "cheeseId": 2,
+      "id": 26
+    },
+    {
+      "orderId": 12,
+      "sizeId": 2,
+      "sauceId": 2,
+      "cheeseId": 1,
+      "id": 27
+    },
+    {
+      "orderId": 12,
+      "sizeId": 5,
+      "sauceId": 2,
+      "cheeseId": 3,
+      "id": 28
+    },
+    {
+      "orderId": 12,
+      "sizeId": 4,
+      "sauceId": 2,
+      "cheeseId": 3,
+      "id": 29
+    },
+    {
+      "orderId": 12,
+      "sizeId": 4,
+      "sauceId": 2,
+      "cheeseId": 3,
+      "id": 30
+    },
+    {
+      "orderId": 13,
+      "sizeId": 2,
+      "sauceId": 1,
+      "cheeseId": 2,
+      "id": 31
+    },
+    {
+      "orderId": 14,
+      "sizeId": 3,
+      "sauceId": 1,
+      "cheeseId": 1,
+      "id": 32
+    },
+    {
+      "orderId": 15,
+      "sizeId": 5,
+      "sauceId": 2,
+      "cheeseId": 3,
+      "id": 33
+    },
+    {
+      "orderId": 16,
+      "sizeId": 5,
+      "sauceId": 4,
+      "cheeseId": 2,
+      "id": 34
     }
   ],
   "pizzaToppings": [
@@ -365,6 +456,146 @@
       "id": 18,
       "pizzaId": 5,
       "toppingId": 3
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 1,
+      "id": 19
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 2,
+      "id": 20
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 3,
+      "id": 21
+    },
+    {
+      "pizzaId": 23,
+      "toppingId": 1,
+      "id": 22
+    },
+    {
+      "pizzaId": 26,
+      "toppingId": 3,
+      "id": 33
+    },
+    {
+      "pizzaId": 26,
+      "toppingId": 4,
+      "id": 34
+    },
+    {
+      "pizzaId": 27,
+      "toppingId": 3,
+      "id": 35
+    },
+    {
+      "pizzaId": 27,
+      "toppingId": 4,
+      "id": 36
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 1,
+      "id": 37
+    },
+    {
+      "pizzaId": 25,
+      "toppingId": 2,
+      "id": 38
+    },
+    {
+      "pizzaId": 26,
+      "toppingId": 3,
+      "id": 39
+    },
+    {
+      "pizzaId": 26,
+      "toppingId": 4,
+      "id": 40
+    },
+    {
+      "pizzaId": 27,
+      "toppingId": 1,
+      "id": 41
+    },
+    {
+      "pizzaId": 27,
+      "toppingId": 6,
+      "id": 42
+    },
+    {
+      "pizzaId": 27,
+      "toppingId": 7,
+      "id": 43
+    },
+    {
+      "pizzaId": 28,
+      "toppingId": 2,
+      "id": 44
+    },
+    {
+      "pizzaId": 29,
+      "toppingId": 2,
+      "id": 45
+    },
+    {
+      "pizzaId": 29,
+      "toppingId": 7,
+      "id": 46
+    },
+    {
+      "pizzaId": 29,
+      "toppingId": 8,
+      "id": 47
+    },
+    {
+      "pizzaId": 30,
+      "toppingId": 2,
+      "id": 48
+    },
+    {
+      "pizzaId": 30,
+      "toppingId": 8,
+      "id": 49
+    },
+    {
+      "pizzaId": 30,
+      "toppingId": 7,
+      "id": 50
+    },
+    {
+      "pizzaId": 31,
+      "toppingId": 3,
+      "id": 51
+    },
+    {
+      "pizzaId": 32,
+      "toppingId": 3,
+      "id": 52
+    },
+    {
+      "pizzaId": 32,
+      "toppingId": 5,
+      "id": 53
+    },
+    {
+      "pizzaId": 33,
+      "toppingId": 2,
+      "id": 54
+    },
+    {
+      "pizzaId": 34,
+      "toppingId": 2,
+      "id": 55
+    },
+    {
+      "pizzaId": 34,
+      "toppingId": 3,
+      "id": 56
     }
   ],
   "orders": [
@@ -393,18 +624,6 @@
       "orderStatus": "Completed"
     },
     {
-      "id": 3,
-      "pizzaId": 7,
-      "employeeId": 1,
-      "delivererId": 3,
-      "tip": 2,
-      "totalCost": 15.65,
-      "createdAt": "2025-04-03T12:15:00",
-      "customerName": "George King",
-      "customerPhone": "555-789-0123",
-      "orderStatus": "Completed"
-    },
-    {
       "id": 4,
       "pizzaId": 2,
       "employeeId": 3,
@@ -417,18 +636,6 @@
       "orderStatus": "Completed"
     },
     {
-      "id": 5,
-      "pizzaId": 8,
-      "employeeId": 2,
-      "delivererId": 2,
-      "tip": 3,
-      "totalCost": 11.8,
-      "createdAt": "2025-03-22T16:10:00",
-      "customerName": "Alice Johnson",
-      "customerPhone": "555-123-4567",
-      "orderStatus": "Completed"
-    },
-    {
       "id": 6,
       "pizzaId": 4,
       "employeeId": 1,
@@ -438,18 +645,6 @@
       "createdAt": "2025-05-05T20:40:00",
       "customerName": "Ian Black",
       "customerPhone": "555-901-2345",
-      "orderStatus": "Completed"
-    },
-    {
-      "id": 7,
-      "pizzaId": 6,
-      "employeeId": 3,
-      "delivererId": 1,
-      "tip": 2.75,
-      "totalCost": 16.1,
-      "createdAt": "2025-03-30T13:00:00",
-      "customerName": "Jill Adams",
-      "customerPhone": "555-012-3456",
       "orderStatus": "Completed"
     },
     {
@@ -481,25 +676,12 @@
       "pizzaId": 3,
       "employeeId": 3,
       "delivererId": 3,
-      "tip": 4.05,
+      "tip": 5,
       "totalCost": 0,
       "createdAt": "2025-05-05T14:45:00",
       "customerName": "Morgan Brown",
       "customerPhone": "555-555-6666",
       "orderStatus": "In Progress"
-    },
-    {
-      "customerName": "bob b",
-      "customerPhone": "534-153-3413",
-      "createdAt": "2025-05-06T00:18:16.013Z",
-      "id": 11
-    },
-    {
-      "customerName": "David West",
-      "customerPhone": "123-456-4455",
-      "tip": 0,
-      "createdAt": "2025-05-06T20:36:23.644Z",
-      "id": 12
     }
-]
+  ]
 }

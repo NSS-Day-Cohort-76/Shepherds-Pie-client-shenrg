@@ -1,38 +1,24 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&family=Quicksand:wght@400;600&family=Roboto:wght@400;700&display=swap");
+
+/* FONTS */
+:root {
+  --font-primary: "Quicksand", sans-serif;
+  --font-secondary: "Nunito", sans-serif;
+  --font-heading: "Roboto", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
-/* Import the google web fonts you want to use */
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Quicksand&family=Roboto:wght@100&display=swap");
-
-/* FONTS
-font-family: "Nunito", sans-serif;
-font-family: "Quicksand", sans-serif;
-font-family: "Roboto", sans-serif; 
-*/
-
 /* COLOR PALETTE */
-/* Feel free to change these values and create your own color palette! https://coolors.co/ is a great resource */
 :root {
-  --primary: #ffb400;
-  --secondary: #00a6ed;
-  --info: #7fb800;
-  --warning: #f6511d;
+  --primary: #ff4500; /* Tomato red */
+  --secondary: #ffd700; /* Cheese yellow */
+  --info: #32cd32; /* Basil green */
+  --warning: #8b0000; /* Deep red for warnings */
   --white: #ffffff;
-  --offWhite: #f2f2f3;
-  --dark: #3b3b3b;
+  --offWhite: #fdf5e6; /* Creamy white */
+  --dark: #2f2f2f; /* Dark gray for text */
   --outline: #c3c0c0;
-  --appBackground: #dddade;
+  --appBackground: #fff8e1; /* Light yellow for a warm background */
 }
 
 /* GLOBAL STYLES */
@@ -41,12 +27,14 @@ button,
 input,
 select,
 textarea {
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
 }
 
 body {
   background-color: var(--appBackground);
+  color: var(--dark);
   margin: 0;
+  line-height: 1.6;
 }
 
 h1,
@@ -55,65 +43,155 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", serif;
+  font-family: var(--font-heading);
+  color: var(--primary);
+  margin-bottom: 0.5rem;
 }
 
-/* This prevents all the links in the app from having default underline */
 a {
   text-decoration: none;
-  color: inherit;
-}
-/* This prevents all the links in the app from turning purple after visiting */
-a:visited {
-  color: inherit;
-}
-/* This prevents all the inputs in the app from having that blue outline when in focus */
-input:focus {
-  outline: none;
+  color: var(--primary);
 }
 
-/* GLOBAL STYLING FOR ALL THE BUTTONS BUTTONS */
+a:hover {
+  color: var(--secondary);
+}
+
+input:focus {
+  outline: 2px solid var(--primary);
+}
+
+/* BUTTON STYLING */
 button {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   border: 1px solid transparent;
   border-radius: 0.5rem;
-  color: var(--white);
+  font-family: var(--font-secondary);
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-/* These are all the color options for the buttons */
-/* If you change the color variables, be sure to change the hover colors to be a darker shade of the colors you chose*/
+button:hover {
+  transform: scale(1.05);
+}
+
 .btn-primary {
   background-color: var(--primary);
+  color: var(--white);
 }
 
 .btn-primary:hover {
-  background-color: #e5a000;
+  background-color: #e03e00; /* Darker tomato red */
 }
 
 .btn-secondary {
   background-color: var(--secondary);
+  color: var(--dark);
 }
 
 .btn-secondary:hover {
-  background-color: #0097d7;
+  background-color: #e6c200; /* Darker cheese yellow */
 }
 
 .btn-warning {
   background-color: var(--warning);
+  color: var(--white);
 }
 
 .btn-warning:hover {
-  background-color: #e14617;
+  background-color: #7a0000; /* Darker deep red */
 }
 
 .btn-info {
   background-color: var(--info);
+  color: var(--white);
 }
 
 .btn-info:hover {
-  background-color: #71a500;
+  background-color: #28a428; /* Darker basil green */
 }
 
+/* CONTAINER STYLING */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: var(--offWhite);
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+/* HEADER STYLING */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
+header h1 {
+  font-size: 3rem;
+  font-family: var(--font-heading);
+  color: var(--primary);
+  text-shadow: 2px 2px var(--secondary);
+}
+
+/* CARD STYLING */
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--outline);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-family: var(--font-heading);
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-family: var(--font-secondary);
+  color: var(--dark);
+}
+
+/* FOOTER STYLING */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: orange;
+  color: var(--white);
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--secondary);
+}
+
+footer a:hover {
+  color: var(--white);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+  }
+}
