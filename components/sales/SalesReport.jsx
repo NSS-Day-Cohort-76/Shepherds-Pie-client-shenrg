@@ -142,7 +142,7 @@ export const SalesReport = () => {
                 <ul>
                     {filteredOrders.map((order) => (
                         <li key={order.id}>
-                            {new Date(order.createdAt).toLocaleDateString()}: ${order.totalCost.toFixed(2)}
+                            {new Date(order.createdAt).toLocaleDateString()}: ${order.totalCost?.toFixed(2)}
                         </li>
                     ))}
                 </ul>
