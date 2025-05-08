@@ -5,7 +5,10 @@ import { getCheeses, getPizzaById, getSauces, getSizes, getToppings, updatePizza
 
 
 export const EditPizza = () => {
-    const { pizzaId, orderId } = useParams()
+
+    const pizzaId = parseInt(useParams().pizzaId)
+    const orderId = parseInt(useParams().orderId)
+    
     const navigate = useNavigate()
 
     const [pizza, setPizza] = useState({
@@ -26,7 +29,7 @@ export const EditPizza = () => {
                 sizeId: pizzaData.sizeId,
                 sauceId: pizzaData.sauceId,
                 cheeseId: pizzaData.cheeseId,
-                toppingIds: pizzaData.toppings.map(top => top.id)
+                toppingIds: pizzaData.toppings.map(top => Number(top.id))
             })
         })
 

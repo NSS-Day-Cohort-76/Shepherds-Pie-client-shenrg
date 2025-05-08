@@ -62,8 +62,8 @@ export const SalesReport = () => {
         const sauceCounts = {};
         const toppingCounts = {};
         filteredOrders.forEach((order) => {
-            const pizza = pizzas.find((p) => p.id === order.pizzaId);
-            if (!pizza) return;
+            const pizzasForOrder = pizzas.filter((pizza) => pizza.orderId === order.id);
+            pizzasForOrder.forEach((pizza) => {
             const { sizeId, cheeseId, sauceId, toppings } = pizza;
             sizeCounts[sizeId] = (sizeCounts[sizeId] || 0) + 1;
             cheeseCounts[cheeseId] = (cheeseCounts[cheeseId] || 0) + 1;
@@ -73,7 +73,8 @@ export const SalesReport = () => {
                     toppingCounts[toppingId] = (toppingCounts[toppingId] || 0) + 1;
                 });
             }
-        });
+        })
+    });
         const mostPopularSize = Object.entries(sizeCounts).sort((a, b) => b[1] - a[1])[0];
         const mostPopularCheese = Object.entries(cheeseCounts).sort((a, b) => b[1] - a[1])[0];
         const mostPopularSauce = Object.entries(sauceCounts).sort((a, b) => b[1] - a[1])[0];
@@ -97,14 +98,15 @@ export const SalesReport = () => {
         const { type, id } = selectedItemDetail;
         let matchCount = 0;
         filteredOrders.forEach((order) => {
-            const pizza = pizzas.find((p) => p.id === order.pizzaId);
-            if (!pizza) return;
+            const pizzasForOrder = pizzas.filter((pizza) => pizza.orderId === order.id);
+            pizzasForOrder.forEach((pizza) => {
             if (type === "size" && pizza.sizeId === id) matchCount++;
             if (type === "cheese" && pizza.cheeseId === id) matchCount++;
             if (type === "sauce" && pizza.sauceId === id) matchCount++;
             if (type === "topping" && Array.isArray(pizza.toppings) && pizza.toppings.includes(id)) matchCount++;
+            })     
         });
-        const percentage = ((matchCount / filteredOrders.length) * 100)?.toFixed(1);
+        const percentage = ((matchCount / filteredOrders.length) * 100).toFixed(1);
         return { matchCount, percentage };
     };
     useEffect(() => {
