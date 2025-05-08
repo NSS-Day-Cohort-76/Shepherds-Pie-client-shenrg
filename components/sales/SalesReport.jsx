@@ -104,7 +104,7 @@ export const SalesReport = () => {
             if (type === "sauce" && pizza.sauceId === id) matchCount++;
             if (type === "topping" && Array.isArray(pizza.toppings) && pizza.toppings.includes(id)) matchCount++;
         });
-        const percentage = ((matchCount / filteredOrders.length) * 100).toFixed(1);
+        const percentage = ((matchCount / filteredOrders.length) * 100)?.toFixed(1);
         return { matchCount, percentage };
     };
     useEffect(() => {
@@ -130,7 +130,7 @@ export const SalesReport = () => {
                 <p>Total Orders: {filteredOrders.length}</p>
                 <p>
                     Total Sales: $
-                    {filteredOrders.reduce((total, order) => total + order.totalCost, 0).toFixed(2)}
+                    {filteredOrders.reduce((total, order) => total + order.totalCost, 0)?.toFixed(2)}
                 </p>
                 <p>
                     Average Order Value: $
@@ -142,7 +142,7 @@ export const SalesReport = () => {
                 <ul>
                     {filteredOrders.map((order) => (
                         <li key={order.id}>
-                            {new Date(order.createdAt).toLocaleDateString()}: ${order.totalCost.toFixed(2)}
+                            {new Date(order.createdAt).toLocaleDateString()}: ${order.totalCost?.toFixed(2)}
                         </li>
                     ))}
                 </ul>

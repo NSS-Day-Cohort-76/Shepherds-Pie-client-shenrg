@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { GetAllOrders } from "../../services/orderService.jsx";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./OrdersList.css";
 import {
   assignDriverToOrder,
@@ -18,8 +18,9 @@ export const OrdersList = () => {
   ); // Defaults to today
   const [currentPage, setCurrentPage] = useState(1);
   const ordersPerPage = 20;
-
   const [employees, setEmployees] = useState([]);
+  const location = useLocation([])
+
 
   // Helper function to filter and sort orders based on the selected date
   const filterAndSortOrders = (orders, date) => {
@@ -54,16 +55,6 @@ useEffect(() => {
   });
 }, []);
 
-const handleDriverAssign = async (orderId, driverId) => {
-  try {
-    await assignDriverToOrder(orderId, driverId);
-    await updateEmployeeStatus(driverId, { onDelivery: true });
-    const updatedOrders = await GetAllOrders();
-    setAllOrders(updatedOrders);
-  } catch (error) {
-    console.error("Error assigning driver:", error);
-  }
-};
 
 // Whenever selectedDate or allOrders change, filter and reset to page 1
 useEffect(() => {
@@ -81,9 +72,9 @@ const currentOrders = filteredOrders.slice(
 const totalPages = Math.ceil(filteredOrders.length / ordersPerPage);
 
 // In OrdersList.jsx, add this before the return statement
-useEffect(() => {
-  console.log("filteredOrders:", filteredOrders)
-}, [filteredOrders])
+// useEffect(() => {
+//   console.log("filteredOrders:", filteredOrders)
+// }, [filteredOrders])
 
 return (
   <div className="order">
@@ -101,11 +92,11 @@ return (
       {filteredOrders.length === 0 ? (
         <p>No orders for {selectedDate}.</p>
       ) : (
-        filteredOrders.map((orderObj) => (
+        currentOrders.map((orderObj) => (
           <Orders
             key={orderObj.id}
             order={orderObj}
-            employees={employees}
+            employees={employees} 
           />
         ))
       )}
