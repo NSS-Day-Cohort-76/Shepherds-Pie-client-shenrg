@@ -12,7 +12,14 @@
 
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getPizzasByOrderId, deletePizza, saveTip, cancelOrder, fetchPizzasWithToppingsAndCosts } from "../../services/orderService.jsx";
+import {
+    getPizzasByOrderId,
+    deletePizza,
+    saveTip,
+    cancelOrder,
+    fetchPizzasWithToppingsAndCosts,
+    updateOrderTotalCost
+} from "../../services/orderService.jsx";
 import "./OrdersList.css";
 
 export const OrderDetails = () => {
@@ -37,6 +44,22 @@ export const OrderDetails = () => {
     };
 
     // Fetch order details and calculate pizza costs
+    // useEffect(() => {
+    //     getPizzasByOrderId(orderId).then((orderData) => {
+    //         fetchPizzasWithToppingsAndCosts().then((pizzasWithCosts) => {
+    //             const updatedPizzas = orderData.pizzas.map((pizza) => {
+    //                 const pizzaWithCost = pizzasWithCosts.find((p) => p.id === pizza.id);
+    //                 return pizzaWithCost || pizza; // Use the pizza with cost if available
+    //             });
+
+    //             setOrder({
+    //                 ...orderData,
+    //                 pizzas: updatedPizzas,
+    //             });
+    //         });
+    //     });
+    // }, [orderId]);
+
     useEffect(() => {
         getPizzasByOrderId(orderId).then((orderData) => {
             fetchPizzasWithToppingsAndCosts().then((pizzasWithCosts) => {
@@ -45,9 +68,18 @@ export const OrderDetails = () => {
                     return pizzaWithCost || pizza; // Use the pizza with cost if available
                 });
 
+                const updatedTotalCost = updatedPizzas.reduce(
+                    (total, pizza) => total + (pizza.totalCost || 0),
+                    orderData.tip || 0
+                );
+
+                // Update the total cost in the database
+                updateOrderTotalCost(orderId, updatedTotalCost);
+
                 setOrder({
                     ...orderData,
                     pizzas: updatedPizzas,
+                    totalCost: updatedTotalCost,
                 });
             });
         });
@@ -62,23 +94,50 @@ export const OrderDetails = () => {
     // Handle tip change
     const handleTipChange = (event) => {
         const tipAmount = parseFloat(event.target.value) || 0;
-        setOrder((prevOrder) => ({
-            ...prevOrder,
-            tip: tipAmount,
-        }));
+
+        // Update the tip in the state
+        setOrder((prevOrder) => {
+            const updatedTotalCost = prevOrder.pizzas.reduce(
+                (total, pizza) => total + (pizza.totalCost || 0),
+                tipAmount
+            );
+
+            return {
+                ...prevOrder,
+                tip: tipAmount,
+                totalCost: updatedTotalCost,
+            };
+        });
+
+        // Optionally save the updated tip and totalCost to the database
+        updateOrderTotalCost(orderId, calculateTotalCost(), tipAmount)
+            .then(() => {
+                console.log("Tip and total cost updated successfully in the database.");
+            })
+            .catch((error) => {
+                console.error("Error updating tip and total cost:", error);
+            });
     };
 
     // Save the updated tip
     const handleSaveTip = () => {
         if (window.confirm("Are you sure you want to update the tip?")) {
-            saveTip(orderId, order.tip)
-                .then(() => {
-                    alert("Tip updated successfully!");
-                })
-                .catch((error) => {
-                    console.error("Error saving tip:", error);
-                    alert("An error occurred while saving the tip. Please try again.");
-                });
+            const updatedTotalCost = calculateTotalCost(); // Recalculate the total cost with the updated tip
+
+            // Update the tip and totalCost in the database
+            // updateOrderTotalCost(orderId, { tip: order.tip, totalCost: updatedTotalCost })
+            //     .then(() => {
+            //         // Update the local state
+            //         setOrder((prevOrder) => ({
+            //             ...prevOrder,
+            //             totalCost: updatedTotalCost,
+            //         }));
+            //         alert("Tip and total cost updated successfully!");
+            //     })
+            //     .catch((error) => {
+            //         console.error("Error updating tip and total cost:", error);
+            //         alert("An error occurred while saving the tip. Please try again.");
+            //     });
         }
     };
 
@@ -87,10 +146,26 @@ export const OrderDetails = () => {
         if (window.confirm("Are you sure you want to delete this pizza?")) {
             deletePizza(pizzaId)
                 .then(() => {
-                    setOrder((prevOrder) => ({
-                        ...prevOrder,
-                        pizzas: prevOrder.pizzas.filter((p) => p.id !== pizzaId),
-                    }));
+                    setOrder((prevOrder) => {
+                        // Filter out the deleted pizza
+                        const updatedPizzas = prevOrder.pizzas.filter((p) => p.id !== pizzaId);
+
+                        // Recalculate the total cost
+                        const updatedTotalCost = updatedPizzas.reduce(
+                            (total, pizza) => total + (pizza.totalCost || 0),
+                            prevOrder.tip || 0
+                        );
+
+                        // Update the total cost in the database
+                        updateOrderTotalCost(orderId, updatedTotalCost);
+
+                        // Update the state
+                        return {
+                            ...prevOrder,
+                            pizzas: updatedPizzas,
+                            totalCost: updatedTotalCost,
+                        };
+                    });
                 })
                 .catch((error) => {
                     console.error("Error deleting pizza:", error);
@@ -182,6 +257,7 @@ export const OrderDetails = () => {
                         </div>
                     </div>
                 ))}
-                </section>
             </section>
-)}
+        </section>
+    )
+}

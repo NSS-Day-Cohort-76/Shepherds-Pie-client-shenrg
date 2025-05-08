@@ -166,7 +166,7 @@ header h1 {
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: orange;
+  background-color: #be6f37;
   color: var(--white);
   font-family: var(--font-secondary);
   font-size: 0.9rem;

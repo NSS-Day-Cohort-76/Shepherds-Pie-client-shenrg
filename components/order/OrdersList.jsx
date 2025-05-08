@@ -18,8 +18,9 @@ export const OrdersList = () => {
   ); // Defaults to today
   const [currentPage, setCurrentPage] = useState(1);
   const ordersPerPage = 20;
-
   const [employees, setEmployees] = useState([]);
+  const location = useLocation([])
+
 
   // Helper function to filter and sort orders based on the selected date
   const filterAndSortOrders = (orders, date) => {
@@ -71,9 +72,9 @@ const currentOrders = filteredOrders.slice(
 const totalPages = Math.ceil(filteredOrders.length / ordersPerPage);
 
 // In OrdersList.jsx, add this before the return statement
-useEffect(() => {
-  console.log("filteredOrders:", filteredOrders)
-}, [filteredOrders])
+// useEffect(() => {
+//   console.log("filteredOrders:", filteredOrders)
+// }, [filteredOrders])
 
 return (
   <div className="order">
@@ -95,7 +96,7 @@ return (
           <Orders
             key={orderObj.id}
             order={orderObj}
-            employees={employees}
+            employees={employees} 
           />
         ))
       )}

@@ -1,7 +1,3 @@
-// export const GetAllOrders = () => {
-//     return fetch(`http://localhost:8088/orders`)  
-//   }
-
 
 export const GetAllOrders = () => {
     return fetch(`http://localhost:8088/orders`)
@@ -13,7 +9,7 @@ export const GetAllOrders = () => {
       })
       .then((data) => {
         // Log the data structure to check if it contains an array
-        console.log("Fetched orders data:", data);
+        // console.log("Fetched orders data:", data);
         return data; // Assuming the result is directly the orders array or an object containing it
       })
       .catch((error) => {
@@ -84,9 +80,22 @@ export const saveTip = (orderId, tip) => {
       },
       body: JSON.stringify({
           tip: tip, // Update the tip property in the database
+          totalCost: totalCost
       }),
   });
 };
+
+// export const saveTotalCost = (orderId, totalCost) => {
+//   return fetch(`http://localhost:8088/orders/${orderId}`, {
+//       method: "PATCH",
+//       headers: {
+//           "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({
+//           totalCost: totalCost, // Update the totalCost property in the database
+//       }),
+//   });
+// };
 
 export const cancelOrder = async (id) => {
   return await fetch(`http://localhost:8088/orders/${id}`, {
@@ -98,4 +107,19 @@ export const cancelOrder = async (id) => {
           }
           return response.json();
       });
+};
+
+export const updateOrderTotalCost = async (orderId, totalCost, tip) => {
+  return await fetch(`http://localhost:8088/orders/${orderId}`, {
+    method: "PATCH", // Use PATCH to update only the totalCost field
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ totalCost, tip}),
+  }).then((response) => {
+    if (!response.ok) {
+      throw new Error("Failed to update order total cost");
+    }
+    return response.json();
+  });
 };

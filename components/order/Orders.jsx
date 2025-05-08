@@ -1,10 +1,24 @@
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react";
-
+import { GetAllOrders } from "../../services/orderService.jsx";
 
 
 export const Orders = ({ order, employees }) => {
+  const [allOrders, setAllOrders] = useState([]);
 
+
+  useEffect(() => {
+    const fetchOrders = async () => {
+        try {
+            const orders = await GetAllOrders();
+            setAllOrders(orders);
+        } catch (error) {
+            console.error("Error fetching orders:", error);
+        }
+    };
+
+    fetchOrders();
+}, []); // Empty dependency array ensures this runs only on mount
 
     const handleDriverAssign = async (orderId, driverId) => {
       try {
@@ -16,8 +30,6 @@ export const Orders = ({ order, employees }) => {
         console.error("Error assigning driver:", error);
       }
     };
-
-
 
     return (
         <section className="order">
