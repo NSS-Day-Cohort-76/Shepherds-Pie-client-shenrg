@@ -1,0 +1,49 @@
+.welcome-container {
+  margin: 2rem auto;
+  width: 60%;
+  text-align: center;
+  padding: 5rem 3rem;
+  border: 1px solid var(--outline);
+  background-color: white;
+  border-radius: 0.5rem;
+  background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Add pizza image */
+  background-size: cover; /* Ensure the image covers the container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+}
+
+/* Styling for the h1 inside the welcome container */
+.welcome-container > h1 {
+  display: flex;
+  flex-direction: column;
+  color: var(--primary); /* Tomato red for the main heading */
+  font-family: var(--font-heading); /* Use the heading font */
+  font-size: 2.5rem;
+  text-shadow: 2px 2px var(--secondary); /* Add a cheese-yellow shadow */
+}
+
+/* Styling for the div inside the welcome container */
+.welcome-container > div {
+  font-style: italic;
+  color: var(--offWhite); /* Light creamy white for the subtitle text */
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Button styling for better contrast */
+.welcome-container .btn-primary {
+  background-color: var(--primary); /* Tomato red */
+  color: var(--white); /* White text for contrast */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.welcome-container .btn-primary:hover {
+  background-color: #e03e00; /* Darker tomato red on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
